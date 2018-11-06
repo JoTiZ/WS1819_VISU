@@ -5,7 +5,7 @@ import squarify # pip install squarify (algorithm for treemap)
 import pandas as pd
 import xlrd
 
-df = pd.read_excel('/Users/panos/Desktop/WS1819_VISU/dataset/crime_xlsx_all_years.xlsx')
+df = pd.read_excel('./dataset/crime_xlsx_all_years.xlsx')
 #print the column names
 #print df.columns
 #get the values for a given column
