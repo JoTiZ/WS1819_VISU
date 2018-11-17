@@ -7,6 +7,8 @@ window.onload = function () {
 
 }
 
+
+
 function slider()
 {
   var slider = document.getElementById("myRange");
