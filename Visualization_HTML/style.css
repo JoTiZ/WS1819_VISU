@@ -59,9 +59,9 @@ li a:hover {
 
 #chartContainer2
 {
-  position: relative;
-    left: 850px;
-    top: -520px;
+  position: absolute;
+    left: 15%;
+    top: 10%;
 }
 
 #chartContainer3
