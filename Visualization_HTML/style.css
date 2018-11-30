@@ -44,6 +44,12 @@ li a:hover {
   top: -560px;
 }
 
+#checkBoxes2
+{
+  position: relative;
+  top: 16px;
+}
+
 #chartContainer
 {
   position: relative;
