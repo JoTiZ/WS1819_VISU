@@ -1,26 +1,4 @@
-window.onload = function () {
-  slider();
-  chartFour();
-
-}
-
-function slider()
-{
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo"); //STILL NOT WORKING
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-      output.innerHTML = this.value;
-  }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function chartFour()
-{
-  const data = 	{name: 'Vancouver',
+{name: 'Vancouver',
       color: 'lightblue',
       children: [{
 	name: 'Dunbar-Southlands',
@@ -12893,27 +12871,3 @@ function chartFour()
 			name: '2011_3_31/0:20',
 			color: '#4937a9',
 			size: 1}]}]}]};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Sunburst()
-      .data(data)
-      .size('size')
-      .color('color')
-      (document.getElementById('chartContainer'));
-}
