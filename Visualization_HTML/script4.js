@@ -26,46 +26,39 @@ function chartThree()
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	zoomEnabled: true,
-	title:{
-		text: "Real Estate Rates"
-	},
+
 	axisX: {
-		title:"Area (in sq. ft)",
-		minimum: 790,
-		maximum: 2260
+		title:"Jahreszahl",
+		minimum: 2002,
+		maximum: 2019,
+		valueFormatString:"####"
 	},
 	axisY:{
-		title: "Price (in USD)",
-		valueFormatString: "$#,##0k"
+		title: "Anzahl aller Verbrechen",
+		minimum: 25000,
+		maximum: 55000,
+		valueFormatString: "##.###"
 	},
 	data: [{
 		type: "scatter",
-		toolTipContent: "<b>Area: </b>{x} sq.ft<br/><b>Price: </b>${y}k",
+		toolTipContent: "<b>Jahr: </b>{x} <br/><b>Anz. Verbrechen: </b>{y}",
 		dataPoints: [
-			{ x: 800, y: 350 },
-			{ x: 900, y: 450 },
-			{ x: 850, y: 450 },
-			{ x: 1250, y: 700 },
-			{ x: 1100, y: 650 },
-			{ x: 1350, y: 850 },
-			{ x: 1200, y: 900 },
-			{ x: 1410, y: 1250 },
-			{ x: 1250, y: 1100 },
-			{ x: 1400, y: 1150 },
-			{ x: 1500, y: 1050 },
-			{ x: 1330, y: 1120 },
-			{ x: 1580, y: 1220 },
-			{ x: 1620, y: 1400 },
-			{ x: 1250, y: 1450 },
-			{ x: 1350, y: 1600 },
-			{ x: 1650, y: 1300 },
-			{ x: 1700, y: 1620 },
-			{ x: 1750, y: 1700 },
-			{ x: 1830, y: 1800 },
-			{ x: 1900, y: 2000 },
-			{ x: 2050, y: 2200 },
-			{ x: 2150, y: 1960 },
-			{ x: 2250, y: 1990 }
+			{ x: 2003, y: 49931 },
+			{ x: 2004, y: 49277 },
+			{ x: 2005, y: 44671 },
+			{ x: 2006, y: 42317 },
+			{ x: 2007, y: 37685 },
+			{ x: 2008, y: 35415 },
+			{ x: 2009, y: 32166 },
+			{ x: 2010, y: 29708 },
+			{ x: 2011, y: 28583 },
+			{ x: 2012, y: 29226 },
+			{ x: 2013, y: 29070 },
+			{ x: 2014, y: 32665 },	
+			{ x: 2015, y: 34333 },
+			{ x: 2016, y: 37834 },
+			{ x: 2017, y: 36974 },
+			{ x: 2018, y: 28236}
 		]
 	}]
 });
