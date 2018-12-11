@@ -1,20 +1,6 @@
 window.onload = function () {
-  slider();
   chartThree();
 
-
-}
-
-function slider()
-{
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo"); //STILL NOT WORKING
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-      output.innerHTML = this.value;
-  }
 }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,20 +14,20 @@ function chartThree()
 	zoomEnabled: true,
 
 	axisX: {
-		title:"Jahreszahl",
+		title:"Year",
 		minimum: 2002,
 		maximum: 2019,
 		valueFormatString:"####"
 	},
 	axisY:{
-		title: "Anzahl aller Verbrechen",
+		title: "Number of crimes",
 		minimum: 25000,
 		maximum: 55000,
 		valueFormatString: "##.###"
 	},
 	data: [{
 		type: "scatter",
-		toolTipContent: "<b>Jahr: </b>{x} <br/><b>Anz. Verbrechen: </b>{y}",
+		toolTipContent: "<b>Year: </b>{x} <br/><b>Number of crimes: </b>{y}",
 		dataPoints: [
 			{ x: 2003, y: 49931 },
 			{ x: 2004, y: 49277 },
