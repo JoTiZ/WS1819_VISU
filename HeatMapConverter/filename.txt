@@ -1,24 +1,4 @@
-window.onload = function () {
-  slider();
-  heatMap();
-
-
-  //var myVar = setInterval(loadlink, 1000);
-
-
-
-
-}
-
-//function loadlink(){
-//location.reload();
-//}
-
-function heatMap()
-{
-  var testData = {
-    max: 8,
-   data: [{lat: 49.2510882, lng:-123.1804479, count: 1},
+data: [{lat: 49.2510882, lng:-123.1804479, count: 1},
 {lat: 49.2823675, lng:-123.1144553, count: 1},
 {lat: 49.2850809, lng:-123.1242051, count: 1},
 {lat: 49.2719256, lng:-123.135107, count: 1},
@@ -218,62 +198,3 @@ function heatMap()
 {lat: 49.2830575, lng:-123.1397309, count: 1},
 {lat: 49.2800609, lng:-123.084779, count: 1},
 {lat: 49.2799614, lng:-123.0847834, count: 1}]
-  };
-
-  var baseLayer = L.tileLayer(
-    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-      maxZoom: 18
-    }
-  );
-
-  var cfg = {
-    // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-    "radius": 0.007,
-    "maxOpacity":document.getElementById("myRange").value/100 ,
-    // scales the radius based on map zoom
-    "scaleRadius": true,
-    // if set to false the heatmap uses the global maximum for colorization
-    // if activated: uses the data maximum within the current map boundaries
-    //   (there will always be a red spot with useLocalExtremas true)
-    "useLocalExtrema": true,
-    // which field name in your data represents the latitude - default "lat"
-    latField: 'lat',
-    // which field name in your data represents the longitude - default "lng"
-    lngField: 'lng',
-    // which field name in your data represents the data value - default "value"
-    valueField: 'count'
-  };
-
-
-  var heatmapLayer = new HeatmapOverlay(cfg);
-
-  var map = new L.Map('map', {
-    center: new L.LatLng(49.244667, -123.125028),
-    zoom: 12,
-    layers: [baseLayer, heatmapLayer]
-  });
-
-  heatmapLayer.setData(testData);
-
-  // make accessible for debugging
-  layer = heatmapLayer;
-
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-function slider()
-{
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo"); //STILL NOT WORKING
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-      output.innerHTML = this.value;
-  }
-}
-
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
