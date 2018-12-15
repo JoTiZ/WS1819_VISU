@@ -4,12 +4,13 @@ body, html {
   height:100%;}
 body { }
 body * {}
-#map {
+#map,#map2003,#map2004,#map2005,#map2006,#map2007,#map2008,
+#map2009,#map2010,#map2011,#map2012,#map2013,#map2014,#map2015,#map2016,#map2017,#map2018{
   height:70%;
   width: 70%;
-  position: relative;
+  position: absolute;
   left: 19%;
-  top: -10%;}
+  top: 10%;}
 .leaflet-container {
   background: rgba(0,0,0,.8) !important;
 }
