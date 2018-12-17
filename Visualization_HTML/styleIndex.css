@@ -57,6 +57,11 @@ li a:hover {
 
 /* ///////////////////////////////////////////////////////////////////////////////// */
 
+#Text{
+  position: absolute;
+  top: 90%;
+}
+
 #checkBoxes
 {
   position: absolute;
