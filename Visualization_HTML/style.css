@@ -10,7 +10,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #eee;
+    background-color: #333;
 }
 
 li {
@@ -19,7 +19,7 @@ li {
 
 li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -29,14 +29,12 @@ li a {
 }
 
 li a:hover {
-    background-color: #0099ff;
-    opacity: 0.5;
+    background-color: #111;
     color: white;
 }
 
 .active {
     background-color: #0099ff;
-    color: white;
     font-weight: 700;
 }
 
