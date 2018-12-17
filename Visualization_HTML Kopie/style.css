@@ -1,29 +1,10 @@
-body, html {
-  margin:10;
-  padding:10;
-  height:100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-body { }
-body * {}
-#map,#map2003,#map2004,#map2005,#map2006,#map2007,#map2008,
-#map2009,#map2010,#map2011,#map2012,#map2013,#map2014,#map2015,#map2016,#map2017,#map2018{
-  height:70%;
-  width: 70%;
-  position: absolute;
-  left: 19%;
-  top: 10%;}
-.leaflet-container {
-  background: rgba(0,0,0,.8) !important;
-}
 
-/*//////////////////////////////////////////////////////////////////////////////////*/
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #eee;
+    background-color: #333;
 }
 
 li {
@@ -32,25 +13,25 @@ li {
 
 li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.8em;
-    text-transform: uppercase;
 }
 
 li a:hover {
-    background-color: #0099ff;
-    opacity: 0.5;
-    color: white;
+    background-color: #111;
 }
 
 .active {
     background-color: #0099ff;
-    color: white;
-    font-weight: 700;
+}
+
+#image
+{
+  position: relative;
+  left: 30%;
+  top: 40px;
 }
 
 
@@ -61,7 +42,6 @@ li a:hover {
 {
   position: absolute;
   top: 10%;
-  font-size: 0.8em;
 }
 
 #checkBoxes2
