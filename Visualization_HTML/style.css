@@ -55,30 +55,26 @@ body {
 
 #Text{
   position: absolute;
-  top: 10%;
-  left:18%;
-  right:10%;
+  top: 130%;
+  left:10%;
 }
 
 #Text2{
   position: absolute;
-  top: 10%;
-  left:18%;
-  right:10%;
+  top: 130%;
+  left:10%;
 }
 
 #Text3{
   position: absolute;
-  top: 10%;
-  left:18%;
-  right:10%;
+  top: 120%;
+  left:10%;
 }
 
 #Text4{
   position: absolute;
-  top: 10%;
-  left:18%;
-  right:10%;
+  top: 120%;
+  left:10%;
 }
 
 #checkBoxes
@@ -98,27 +94,27 @@ body {
 {
   position: absolute;
     left: 15%;
-    top: 20%;
+    top: 10%;
 }
 
 #chartContainer2
 {
   position: absolute;
     left: 15%;
-    top: 20%;
+    top: 10%;
 }
 
 #chartContainer3
 {
   position: relative;
     left: 250px;
-    top: 20px;
+    top: 0px;
 }
 
 #container {
   position: relative;
   left: 850px;
-  top: 20px;
+  top: 0px;
 
 }
 
