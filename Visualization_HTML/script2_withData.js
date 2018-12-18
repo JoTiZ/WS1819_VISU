@@ -27,9 +27,7 @@ function chartOne()
       labelFontSize: 20,
       labelFontWeight: "bold",
       labelFontFamily: "Arial",
-  		title: "Years",
-  		minimum: -0.02,
-  		maximum: 3.02
+  		title: "Years"
   	},
   	axisY:{
       titleFontSize: 20,
