@@ -12,14 +12,35 @@ function chartThree()
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	zoomEnabled: true,
+  title:{
+    fontSize: 20,
+    fontWeight: "bold",
+    fontFamily: "Arial",
+    text: "Crimes in Vancouver"
+  },
+  legend:{
+fontSize: 15
+},
 
 	axisX: {
+    titleFontSize: 20,
+    titleFontWeight: "bold",
+    titleFontFamily: "Arial",
+    labelFontSize: 20,
+    labelFontWeight: "bold",
+    labelFontFamily: "Arial",
 		title:"Year",
 		minimum: 2002,
 		maximum: 2019,
 		valueFormatString:"####"
 	},
 	axisY:{
+    titleFontSize: 20,
+    titleFontWeight: "bold",
+    titleFontFamily: "Arial",
+    labelFontSize: 20,
+    labelFontWeight: "bold",
+    labelFontFamily: "Arial",
 		title: "Number of crimes",
 		minimum: 25000,
 		maximum: 55000,
@@ -40,7 +61,7 @@ function chartThree()
 			{ x: 2011, y: 28583 },
 			{ x: 2012, y: 29226 },
 			{ x: 2013, y: 29070 },
-			{ x: 2014, y: 32665 },	
+			{ x: 2014, y: 32665 },
 			{ x: 2015, y: 34333 },
 			{ x: 2016, y: 37834 },
 			{ x: 2017, y: 36974 },

@@ -1,21 +1,9 @@
 window.onload = function () {
-  slider();
   chartOne();
 
 
 }
 
-function slider()
-{
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo"); //STILL NOT WORKING
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-      output.innerHTML = this.value;
-  }
-}
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,24 +12,42 @@ function chartOne()
   var chart = new CanvasJS.Chart("chartContainer", {
   	animationEnabled: true,
   	title:{
-  		text: "Products Sold by XYZ Ltd. in 2016"
+      fontSize: 20,
+      fontWeight: "bold",
+      fontFamily: "Arial",
+  		text: "Crimes in Vancouver"
   	},
+    legend:{
+  fontSize: 15
+},
   	axisX:{
+      titleFontSize: 20,
+      titleFontWeight: "bold",
+      titleFontFamily: "Arial",
+      labelFontSize: 20,
+      labelFontWeight: "bold",
+      labelFontFamily: "Arial",
   		title: "Years",
   		minimum: -0.02,
   		maximum: 3.02
   	},
   	axisY:{
-  		title:"Numbers of Crimes"
+      titleFontSize: 20,
+      titleFontWeight: "bold",
+      titleFontFamily: "Arial",
+      labelFontSize: 20,
+      labelFontWeight: "bold",
+      labelFontFamily: "Arial",
+  		title:"Numbers of Crimes",
   	},
   	toolTip:{
   		shared: true
   	},
   	data: [{
   		type: "stackedArea100",
-		showinLegend: "true";
-  		name: "Other Theft", 
-		datapoints:[ 
+		showinLegend: "true",
+  		name: "Other Theft",
+		dataPoints:[
 			{y: 2582, label: "2003"},
 			{y: 2581, label: "2004"},
 			{y: 2541, label: "2005"},
@@ -63,8 +69,8 @@ function chartOne()
   	{
   		type: "stackedArea100",
   		showInLegend: "true",
-  		name: "Vehicle Collision or Pedestrian Struck (with Fatality)", 
-		datapoints:[ 
+  		name: "Vehicle Collision or Pedestrian Struck (with Fatality)",
+		dataPoints:[
 			{y: 24, label: "2003"},
 			{y: 24, label: "2004"},
 			{y: 0, label: "2005"},
@@ -82,13 +88,13 @@ function chartOne()
 			{y: 0, label: "2017"},
 			{y: 0, label: "2018"}
 		]
-		
+
   	},
   	{
   		type: "stackedArea100",
   		showInLegend: "true",
-  		name: "Theft from Vehicle", 
-		datapoints:[ 
+  		name: "Theft from Vehicle",
+		dataPoints:[
 			{y: 17744, label: "2003"},
 			{y: 17577, label: "2004"},
 			{y: 16822, label: "2005"},
@@ -106,13 +112,13 @@ function chartOne()
 			{y: 13545, label: "2017"},
 			{y: 9509, label: "2018"}
 		]
-		
+
   	},
   	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Offence Against a Person", 
-		datapoints:[ 
+		name: "Offence Against a Person",
+		dataPoints:[
 			{y: 3510, label: "2003"},
 			{y: 3490, label: "2004"},
 			{y: 3419, label: "2005"},
@@ -134,8 +140,8 @@ function chartOne()
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Theft of Vehicle", 
-		datapoints:[ 
+		name: "Theft of Vehicle",
+		dataPoints:[
 			{y: 6361, label: "2003"},
 			{y: 6298, label: "2004"},
 			{y: 5443, label: "2005"},
@@ -157,8 +163,8 @@ function chartOne()
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Mischief", 
-		datapoints:[ 
+		name: "Mischief",
+		dataPoints:[
 			{y: 6391, label: "2003"},
 			{y: 6312, label: "2004"},
 			{y: 5903, label: "2005"},
@@ -176,14 +182,14 @@ function chartOne()
 			{y: 5202, label: "2017"},
 			{y: 4487, label: "2018"}
 		]
-		
+
 	},
-	
+
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Break and Enter Commercial", 
-		datapoints:[ 
+		name: "Break and Enter Commercial",
+		dataPoints:[
 			{y: 3197, label: "2003"},
 			{y: 3197, label: "2004"},
 			{y: 3197, label: "2005"},
@@ -201,14 +207,14 @@ function chartOne()
 			{y: 3197, label: "2017"},
 			{y: 2504, label: "2018"}
 		]
-		
+
 	},
-	
+
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Vehicle Collision or Pedestrian Struck (with Injury)", 
-		datapoints:[ 
+		name: "Vehicle Collision or Pedestrian Struck (with Injury)",
+		dataPoints:[
 			{y: 1803, label: "2003"},
 			{y: 1649, label: "2004"},
 			{y: 0, label: "2005"},
@@ -224,15 +230,15 @@ function chartOne()
 			{y: 0, label: "2015"},
 			{y: 0, label: "2016"},
 			{y: 0, label: "2017"},
-			{y: 0, label: "2018"},]
-		
+			{y: 0, label: "2018"}]
+
 	},
-	
+
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Break and Enter Residential/Other", 
-		datapoints:[ 
+		name: "Break and Enter Residential/Other",
+		dataPoints:[
 			{y: 6883, label: "2003"},
 			{y: 6713, label: "2004"},
 			{y: 5910, label: "2005"},
@@ -250,14 +256,14 @@ function chartOne()
 			{y: 4608, label: "2017"},
 			{y: 4177, label: "2018"}
 		]
-		
+
 	},
-	
+
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Homicide", 
-		datapoints:[ 
+		name: "Homicide",
+		dataPoints:[
 			{y: 18, label: "2003"},
 			{y: 18, label: "2004"},
 			{y: 18, label: "2005"},
@@ -273,15 +279,15 @@ function chartOne()
 			{y: 18, label: "2015"},
 			{y: 18, label: "2016"},
 			{y: 18, label: "2017"},
-			{y: 18, label: "2018"},]
-		
+			{y: 18, label: "2018"}]
+
 	},
-	
+
 	{
   		type: "stackedArea100",
   		showInLegend: "true",
-		name: "Theft of Bicycle", 
-		datapoints:[ 
+		name: "Theft of Bicycle",
+		dataPoints:[
 			{y: 1418, label: "2003"},
 			{y: 1418, label: "2004"},
 			{y: 1418, label: "2005"},
@@ -297,11 +303,9 @@ function chartOne()
 			{y: 1418, label: "2015"},
 			{y: 1418, label: "2016"},
 			{y: 1418, label: "2017"},
-			{y: 1418, label: "2018"},]
-		
-	}
+			{y: 1418, label: "2018"}]
 
-  		
+
   	}]
 
   });
