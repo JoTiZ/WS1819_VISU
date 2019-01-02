@@ -9,8 +9,7 @@ var jsonFile = new XMLHttpRequest();
     jsonFile.onreadystatechange = function() {
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
-          console.log(JSON.stringify(allData));
-          alert(jsonFile.responseText);
+          alert(allData);
         }
      }
 
@@ -118,11 +117,14 @@ function radioFunction()
 ///////////////////////////////////////////////////////////////////////////////////
 function heatMapAll()
 {
+  alert(allData);
+//var myobj = JSON.parse('[{"lat": 49.2510882, "lng":-123.1804479, "count": 1},{"lat": 49.2719256, "lng":-123.135107, "count": 1}]');
+var myobj = JSON.parse(allData);
 
-
+alert(myobj);
   var testData = {
     max: 8,
-   data:'[{lat: 49.2510882, lng:-123.1804479, count: 1},{lat: 49.2823675, lng:-123.1144553, count: 1},{lat: 49.2800609, lng:-123.084779, count: 1}]'
+    data:myobj
 
 
   };

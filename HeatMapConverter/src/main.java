@@ -97,7 +97,7 @@ public class main {
 				    	String temp = sortedlatLon.get(i);
 				    	String lati = temp.substring(0,temp.indexOf(";"));
 				    	String longi = temp.substring(temp.indexOf(";")+1,temp.length());
-				    	data = "{lat: "+lati+", lng:"+longi+", count: 1}";
+				    	data = "{\"lat\": "+lati+", \"lng\":"+longi+", \"count\": 1}";
 				    	if(!lati.equals("0") && !longi.equals("0")) 
 				    	{
 					    	if(i < dataLimit-1)
@@ -111,7 +111,7 @@ public class main {
 				    data = "]";
 				    builder.append(data);
 				    
-				    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/HeatMapConvertedData/ALL_DATA.txt")) {
+				    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/WS1819_VISU/NodeJSWebServer/Visualization_HTML/HeatMapConvertedData/ALL_DATA.txt")) {
 				        out.println(builder);     
 				    }
 				    
@@ -167,7 +167,7 @@ public class main {
 							    	String longi = line.substring(line.indexOf(";")+1,line.length());
 							    	if(!lati.equals("0") && !longi.equals("0")) 
 							    	{
-								    	data = "{lat: "+lati+", lng:"+longi+", count: 1}";
+							    		data = "{\"lat\": "+lati+", \"lng\":"+longi+", \"count\": 1}";
 								    	if(i < dataLimit-1)
 								    	{
 								    		data = data+",\n";
@@ -194,7 +194,7 @@ public class main {
 					    
 					    tmpCrime = tmpCrime.replace(" ", "_");
 					    tmpCrime = tmpCrime.replace("/", "_");
-					    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/HeatMapConvertedData/"+f+""+tmpCrime+".txt")) {
+					    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/WS1819_VISU/NodeJSWebServer/Visualization_HTML/HeatMapConvertedData/"+f+""+tmpCrime+".txt")) {
 					        out.println(builder);     
 					    }
 			    		
