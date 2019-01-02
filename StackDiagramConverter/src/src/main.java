@@ -52,11 +52,11 @@ public class main {
 				{y: 496, label: "2018"}
 			]
              */
-
+            data.add("[");
             for (int i = 0; i < typesOfCrimes.size(); i++) {
                 final String currentCrime = typesOfCrimes.get(i);
-                String dataString = "{\n type: \"stackedArea\", \n showInLegend: \"true\", \n name: \"" +
-                		currentCrime + "\",\n dataPoints:[ \n";
+                String dataString = "{\n \"type\": \"stackedArea\", \n \"showInLegend\": \"true\", \n \"name\": \"" +
+                		currentCrime + "\",\n \"dataPoints\":[ \n";
                 for (int b = 0; b < yearsWithoutDuplicates.size(); b++) {
                     int counterOfYears = 0;
                     final int currentYear = yearsWithoutDuplicates.get(b);
@@ -72,10 +72,10 @@ public class main {
                         }
                     }
                     if (b != (yearsWithoutDuplicates.size()-1)) {
-                    	dataString += "\t {y: " + counterOfCrimes + ", label: \"" + 
+                    	dataString += "{\"y\": " + counterOfCrimes + ", \"label\": \"" + 
                     			currentYear + "\"},\n";
                     } else {
-                    	dataString += "\t {y: " + counterOfCrimes + ", label: \"" + 
+                    	dataString += "{\"y\": " + counterOfCrimes + ", \"label\": \"" + 
                     			currentYear + "\"}";
                     }
                     
@@ -83,7 +83,7 @@ public class main {
                 if (i != (typesOfCrimes.size()-1)) {
                 	dataString += "]\n},\n \n";
                 }else {
-                	dataString += "]\n}";
+                	dataString += "]\n}]";
                 }
                 
 
