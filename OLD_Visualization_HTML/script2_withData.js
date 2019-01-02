@@ -42,8 +42,8 @@ function chartOne()
   		shared: true
   	},
   	data: [{
-  		type: "stackedArea100",
-		showinLegend: "true",
+  		type: "stackedArea",
+		showInLegend: "true",
   		name: "Other Theft",
 		dataPoints:[
 			{y: 2582, label: "2003"},
@@ -65,7 +65,7 @@ function chartOne()
 		]
   	},
   	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
   		name: "Vehicle Collision or Pedestrian Struck (with Fatality)",
 		dataPoints:[
@@ -89,7 +89,7 @@ function chartOne()
 
   	},
   	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
   		name: "Theft from Vehicle",
 		dataPoints:[
@@ -113,7 +113,7 @@ function chartOne()
 
   	},
   	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Offence Against a Person",
 		dataPoints:[
@@ -136,7 +136,7 @@ function chartOne()
 		]
 	},
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Theft of Vehicle",
 		dataPoints:[
@@ -159,7 +159,7 @@ function chartOne()
 		]
 	},
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Mischief",
 		dataPoints:[
@@ -184,7 +184,7 @@ function chartOne()
 	},
 
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Break and Enter Commercial",
 		dataPoints:[
@@ -209,7 +209,7 @@ function chartOne()
 	},
 
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Vehicle Collision or Pedestrian Struck (with Injury)",
 		dataPoints:[
@@ -233,7 +233,7 @@ function chartOne()
 	},
 
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Break and Enter Residential/Other",
 		dataPoints:[
@@ -258,7 +258,7 @@ function chartOne()
 	},
 
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Homicide",
 		dataPoints:[
@@ -282,7 +282,7 @@ function chartOne()
 	},
 
 	{
-  		type: "stackedArea100",
+  		type: "stackedArea",
   		showInLegend: "true",
 		name: "Theft of Bicycle",
 		dataPoints:[
