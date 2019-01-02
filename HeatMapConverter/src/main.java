@@ -85,12 +85,12 @@ public class main {
 		    {
 		    	if(f==2002) // 2002 = All Data Selected
 		    	{
-				    String data = "[";
+	    			String data = "[";
 				    
 				    StringBuilder builder = new StringBuilder();
 		            builder.append(data);
 		            
-		            int dataLimit = 50000;
+		            int dataLimit = 200;
 				    
 				    for (int i =0; i<dataLimit; i++) 
 			    	{
@@ -111,57 +111,95 @@ public class main {
 				    data = "]";
 				    builder.append(data);
 				    
-				    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/WS1819_VISU/Visualization_HTML/ConvertedData/HeatMap/ConvertedDataAllYears.txt")) {
+				    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/HeatMapConvertedData/ALL_DATA.txt")) {
 				        out.println(builder);     
 				    }
+				    
 			    }
 		    	else
 		    	{
-		    		String data = "[";
-				    
-				    StringBuilder builder = new StringBuilder();
-		            builder.append(data);
-		            
-		            int dataLimit = 200;
-				    int counter =0;
-				    for (int i =0; i<dataLimit;) 
-			    	{
-				    	String temp = sortedAllData.get(counter);
-				    	if(temp.contains(";"+f+";"))
+		    		for(int t=0;t<9;t++)
+		    		{
+		    			String tmpCrime="";
+		    			if(t==0)
+		    			{tmpCrime="Break and Enter Commercial";}
+		    			else if(t==1)
+		    			{tmpCrime="Break and Enter Residential/Other";}
+		    			else if(t==2)
+		    			{tmpCrime="Mischief";}
+		    			else if(t==3)
+		    			{tmpCrime="Other Theft";}
+		    			else if(t==4)
+		    			{tmpCrime="Theft from Vehicle";}
+		    			else if(t==5)
+		    			{tmpCrime="Theft of Bicycle";}
+		    			else if(t==6)
+		    			{tmpCrime="Theft of Vehicle";}
+		    			else if(t==7)
+		    			{tmpCrime="Vehicle Collision or Pedestrian Struck (with Fatality)";}
+		    			else if(t==8)
+		    			{tmpCrime="Vehicle Collision or Pedestrian Struck (with Injury)";}
+		    			
+			    		String data = "[";
+					    
+					    StringBuilder builder = new StringBuilder();
+			            builder.append(data);
+			            
+			            int dataLimit = 200;
+					    int counter =0;
+					    for (int i =0; i<dataLimit;) 
 				    	{
-				    		String line = temp.substring(temp.indexOf(";")+1, temp.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        line = line.substring(line.indexOf(";")+1, line.length());
-					        
-					    	String lati = line.substring(0,line.indexOf(";"));
-					    	String longi = line.substring(line.indexOf(";")+1,line.length());
-					    	if(!lati.equals("0") && !longi.equals("0")) 
+					    	String temp = sortedAllData.get(counter);
+					    	if(temp.contains(";"+f+";"))
 					    	{
-						    	data = "{lat: "+lati+", lng:"+longi+", count: 1}";
-						    	if(i < dataLimit-1)
+					    		if(temp.contains(""+tmpCrime+";"))
 						    	{
-						    		data = data+",\n";
+						    		String line = temp.substring(temp.indexOf(";")+1, temp.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        line = line.substring(line.indexOf(";")+1, line.length());
+							        
+							    	String lati = line.substring(0,line.indexOf(";"));
+							    	String longi = line.substring(line.indexOf(";")+1,line.length());
+							    	if(!lati.equals("0") && !longi.equals("0")) 
+							    	{
+								    	data = "{lat: "+lati+", lng:"+longi+", count: 1}";
+								    	if(i < dataLimit-1)
+								    	{
+								    		data = data+",\n";
+								    	}
+								    	builder.append(data);
+								    	i++;
+							    	}
 						    	}
-						    	builder.append(data);
-						    	i++;
 					    	}
+					    	counter++;
+					    	if(counter >= sortedAllData.size())
+					    	{break;}
 				    	}
-				    	counter++;
+					    
+					    
+					    data = "]";
+					    builder.append(data);
+					    
+					    int a = builder.lastIndexOf(",");
+					    int b = builder.length();
+					    if((b-a)<=3 && a !=-1)
+					    {
+					    builder.deleteCharAt(a);}
+					    
+					    tmpCrime = tmpCrime.replace(" ", "_");
+					    tmpCrime = tmpCrime.replace("/", "_");
+					    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/HeatMapConvertedData/"+f+""+tmpCrime+".txt")) {
+					        out.println(builder);     
+					    }
+			    		
 			    	}
-				    
-				    data = "]";
-				    builder.append(data);
-				    
-				    try (PrintWriter out = new PrintWriter("/Users/panos/Desktop/WS1819_VISU/Visualization_HTML/ConvertedData/HeatMap/ConvertedData"+f+".txt")) {
-				        out.println(builder);     
-				    }
-		    		
-		    	}
+		    	}		
 		    }
 	    	
 		    
