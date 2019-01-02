@@ -1,0 +1,180 @@
+body, html {
+  margin:10;
+  padding:10;
+  height:100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body { }
+body * {}
+#map,#map2003,#map2004,#map2005,#map2006,#map2007,#map2008,
+#map2009,#map2010,#map2011,#map2012,#map2013,#map2014,#map2015,#map2016,#map2017,#map2018{
+  height:70%;
+  width: 70%;
+  position: absolute;
+  left: 19%;
+  top: 10%;}
+.leaflet-container {
+  background: rgba(0,0,0,.8) !important;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+li a:hover {
+    background-color: #111;
+    color: white;
+}
+
+.active {
+    background-color: #0099ff;
+    font-weight: 700;
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+
+#Text{
+  position: absolute;
+  top: 90%;
+}
+
+#checkBoxes
+{
+  position: absolute;
+  top: 10%;
+  font-size: 0.8em;
+}
+
+#checkBoxes2
+{
+  position: relative;
+  top: 16px;
+}
+
+#chartContainer
+{
+  position: absolute;
+    left: 15%;
+    top: 10%;
+}
+
+#chartContainer2
+{
+  position: absolute;
+    left: 15%;
+    top: 10%;
+}
+
+#chartContainer3
+{
+  position: relative;
+    left: 250px;
+    top: 0px;
+}
+
+#container {
+  position: relative;
+  left: 850px;
+  top: 0px;
+
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+
+.vertical-menu {
+    width: 200px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #0099ff;
+    color: white;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+
+
+.slidecontainer {
+    position:absolute;
+    top:90%;
+    left:29%;
+    width: 52%; /* Width of the outside container */
+    margin:0 auto;
+}
+
+.slidecontainer2 {
+    position:absolute;
+    top:120%;
+    left:29%;
+    width: 52%; /* Width of the outside container */
+    margin:0 auto;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #0099ff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #0099ff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}

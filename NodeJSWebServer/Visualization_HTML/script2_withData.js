@@ -43,7 +43,7 @@ function chartOne()
   	},
   	data: [{
   		type: "stackedArea100",
-		showinLegend: "true",
+		showInLegend: "true",
   		name: "Other Theft",
 		dataPoints:[
 			{y: 2582, label: "2003"},
