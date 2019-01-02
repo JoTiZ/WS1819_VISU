@@ -1,4 +1,4 @@
-var url = "http://localhost:8000/dataStackDiagram.txt";
+var url = "/dataStackDiagram.txt";
 
 var allData;
 
