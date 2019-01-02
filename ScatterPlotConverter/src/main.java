@@ -1,5 +1,7 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -12,7 +14,7 @@ public class main {
 
         try {
             final FileInputStream inputStream =
-                new FileInputStream("C:/Users/iwa/Documents/Uni/Visualisierung/WS1819_VISU/dataset/converted_data.csv");
+                new FileInputStream("/Users/imkewagner/Git/WS1819_VISU/dataset/converted_data.csv");
             final Scanner fileScanner = new Scanner(inputStream, "UTF-8");
             final List<Integer> years = new ArrayList<>();
 
@@ -29,6 +31,18 @@ public class main {
             final List<String> occurencies = new ArrayList<>();
             final List<Integer> yearsWithoutDuplicates = new ArrayList<>(new HashSet<>(years));
             int controller = 0;
+            
+            /*
+             type: "scatter",
+			toolTipContent: "<b>Year: </b>{x} <br/><b>Number of crimes: </b>{y}",
+			dataPoints: [
+				{ x: 2003, y: 49931 },
+				{ x: 2018, y: 28236}
+			]
+             */
+            
+            occurencies.add(" type: \"scatter\",\n toolTipContent: \"<b>Year: </b>{x} <br/><b>"+
+            		"Number of crimes: </b>{y}\",\n dataPoints: [\n");
             for (int i = 0; i < yearsWithoutDuplicates.size(); i++) {
                 int counter = 0;
                 final int currentYear = yearsWithoutDuplicates.get(i);
@@ -38,12 +52,38 @@ public class main {
                     }
                 }
                 controller += counter;
-                occurencies.add("" + currentYear + "=" + counter);
+                if (i != (yearsWithoutDuplicates.size()-1)) {
+                	occurencies.add("\t {x: " + currentYear + ", y:" + counter + "},\n");
+                } else {
+                	occurencies.add("\t {x: " + currentYear + ", y:" + counter + "}\n ]");
+                }
+                
             }
-            // System.out.println(yearsWithoutDuplicates);
-            System.out.println(
-                "Eintraege: " + years.size() + " Kontrolle: " + controller + " Groesse: " + occurencies.size());
-            System.out.println(Arrays.asList(occurencies));
+            
+            
+StringBuilder builder = new StringBuilder();
+            
+            for(int i = 0; i < occurencies.size(); i ++) {
+            	builder.append(occurencies.get(i));
+            }
+            
+            PrintWriter out = null;
+            
+            try {
+            	  out = new PrintWriter("dataScatterPlot.txt");
+            	  out.println(builder); 
+            } catch (IOException ioe) {
+            	ioe.printStackTrace();
+            } finally {
+            	if (out != null) {
+            		out.flush();
+            		out.close();
+            	}
+            }
+          
+            
+            System.out.println("finished");
+            
         } catch (final FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
