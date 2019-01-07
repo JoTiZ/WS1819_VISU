@@ -1,25 +1,146 @@
+var url = "/sbd_data.txt";
+var allData;
+var recentData;
+var checkedYearBoxes = [];
+var checkedCrimeBoxes = [];
+
+var jsonFile = new XMLHttpRequest();
+    jsonFile.open("GET",url,true);
+    jsonFile.send();
+
+    jsonFile.onreadystatechange = function() {
+        if (jsonFile.readyState== 4 && jsonFile.status == 200) {
+          allData = jsonFile.responseText;
+        }
+     }
+
 window.onload = function () {
+  recheckAllBoxes();
   chartTwo();
 }
 
-function slider()
-{
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo"); //STILL NOT WORKING
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-      output.innerHTML = this.value;
-  }
+function recheckAllBoxes(){
+  document.getElementById("cb2003").checked = true;
+  document.getElementById("cb2004").checked = true;
+  document.getElementById("cb2005").checked = true;
+  document.getElementById("cb2006").checked = true;
+  document.getElementById("cb2007").checked = true;
+  document.getElementById("cb2008").checked = true;
+  document.getElementById("cb2009").checked = true;
+  document.getElementById("cb2010").checked = true;
+  document.getElementById("cb2011").checked = true;
+  document.getElementById("cb2012").checked = true;
+  document.getElementById("cb2013").checked = true;
+  document.getElementById("cb2014").checked = true;
+  document.getElementById("cb2015").checked = true;
+  document.getElementById("cb2016").checked = true;
+  document.getElementById("cb2017").checked = true;
+  document.getElementById("cb2018").checked = true;
+  document.getElementById("Break And Enter Commercial").checked = true;
+  document.getElementById("Break And Enter Residential/Other").checked = true;
+  document.getElementById("Mischief").checked = true;
+  document.getElementById("Other Theft").checked = true;
+  document.getElementById("Theft From Vehicle").checked = true;
+  document.getElementById("Theft Of Bicycle").checked = true;
+  document.getElementById("Theft Of Vehicle").checked = true;
+  document.getElementById("Vehicle Collision Or Pedestrian Struck With Fatality").checked = true;
+  document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked = true
 }
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function checkFunction(){
+  //check witch years are checked
+  checkedYearBoxes.length = 0;
+  if(document.getElementById("cb2003").checked == true){
+    checkedYearBoxes.push("2003");
+  }
+  if(document.getElementById("cb2004").checked == true){
+    checkedYearBoxes.push("2004");
+  }
+  if(document.getElementById("cb2005").checked == true){
+    checkedYearBoxes.push("2005");
+  }
+  if(document.getElementById("cb2006").checked == true){
+    checkedYearBoxes.push("2006");
+  }
+  if(document.getElementById("cb2007").checked == true){
+    checkedYearBoxes.push("2007");
+  }
+  if(document.getElementById("cb2008").checked == true){
+    checkedYearBoxes.push("2008");
+  }
+  if(document.getElementById("cb2009").checked == true){
+    checkedYearBoxes.push("2009");
+  }
+  if(document.getElementById("cb2010").checked == true){
+    checkedYearBoxes.push("2010");
+  }
+  if(document.getElementById("cb2011").checked == true){
+    checkedYearBoxes.push("2011");
+  }
+  if(document.getElementById("cb2012").checked == true){
+    checkedYearBoxes.push("2012");
+  }
+  if(document.getElementById("cb2013").checked == true){
+    checkedYearBoxes.push("2013");
+  }
+  if(document.getElementById("cb2014").checked == true){
+    checkedYearBoxes.push("2014");
+  }
+  if(document.getElementById("cb2015").checked == true){
+    checkedYearBoxes.push("2015");
+  }
+  if(document.getElementById("cb2016").checked == true){
+    checkedYearBoxes.push("2016");
+  }
+  if(document.getElementById("cb2017").checked == true){
+    checkedYearBoxes.push("2017");
+  }
+  if(document.getElementById("cb2018").checked == true){
+    checkedYearBoxes.push("2018");
+  }
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //check witch crimes are checked
+  checkedCrimeBoxes.length = 0;
+  if(document.getElementById("Break And Enter Commercial").checked == true){
+    checkedCrimeBoxes.push("Break And Enter Commercial");
+  }
+  if(document.getElementById("Break And Enter Residential/Other").checked == true){
+    checkedCrimeBoxes.push("Break And Enter Residential/Other");
+  }
+  if(document.getElementById("Mischief").checked == true){
+    checkedCrimeBoxes.push("Mischief");
+  }
+  if(document.getElementById("Other Theft").checked == true){
+    checkedCrimeBoxes.push("Other Theft");
+  }
+  if(document.getElementById("Theft From Vehicle").checked == true){
+    checkedCrimeBoxes.push("Theft From Vehicle");
+  }
+  if(document.getElementById("Theft Of Bicycle").checked == true){
+    checkedCrimeBoxes.push("Theft Of Bicycle");
+  }
+  if(document.getElementById("Theft Of Vehicle").checked == true){
+    checkedCrimeBoxes.push("Theft Of Vehicle");
+  }
+  if(document.getElementById("Vehicle Collision Or Pedestrian Struck With Fatality").checked == true){
+    checkedCrimeBoxes.push("Vehicle Collision Or Pedestrian Struck With Fatality");
+  }
+  if(document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked == true){
+    checkedCrimeBoxes.push("Vehicle Collision Or Pedestrian Struck With Injury");
+  }
+  console.log(checkedYearBoxes);
+  console.log(checkedCrimeBoxes);
+}
+
+function loadNeededData(){
+  recentData = JSON.parse('{"year": 2003, "yeeep": "bla"}');
+  //recentData = JSON.parse('{"foo": 1}');
+  console.log(recentData);
+}
 
 function chartTwo()
 {
+  loadNeededData();
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	axisX: {
@@ -110,40 +231,6 @@ function chartTwo()
       { x: 1, y: 1372 }       // West Point Grey
 		]
 	},
-/*	{ // TYPE OF CRIME:: "Homicide" !!!!NO DATA - PRIVACY!!!!
-		type: "stackedBar",
-		name: "Homicide",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 341},     // Arbutus Ridge
-			{ x: 23, y: 181},     // Central Business District
-			{ x: 22, y: 305},     // Dunbar-Southlands
-      { x: 21, y: 318 },    // Fairview
-      { x: 20, y: 286 },    // Grandview-Woodland
-			{ x: 19, y: 991 },    // Hastings-Sunrise
-			{ x: 18, y: 157 },    // Kensington-Cedar Cottage
-      { x: 17, y: 359 },    // Kerrisdale
-      { x: 16, y: 333 },    // Killarney
-			{ x: 15, y: 231 },    // Kitsilano
-			{ x: 14, y: 115 },    // Marpole
-      { x: 13, y: 306 },    // Mount Pleasant
-      { x: 12, y: 18 },     // Musqueam
-			{ x: 11, y: 356 },    // Oakridge
-			{ x: 10, y: 125 },    // Renfrew-Collingwood
-      { x: 9, y: 911 },     // Riley Park
-      { x: 8, y: 141 },     // Shaughnessy
-			{ x: 7, y: 342 },    // South Cambie
-      { x: 6, y: 82 },     // Stanley Park
-      { x: 5, y: 4},       // Strathcona
-      { x: 4, y: 7 },      // Sunset
-			{ x: 3, y: 5 },      // Victoria-Fraserview
-			{ x: 2, y: 2 },      // West End
-      { x: 1, y: 6 }       // West Point Grey
-		]
-	},*/
 	{ // TYPE OF CRIME:: "Mischief"
 		type: "stackedBar",
 		name: "Mischief",

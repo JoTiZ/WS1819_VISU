@@ -4,17 +4,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <script src="script3.js"></script>
-
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
   <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/sunburst.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
-
 </head>
-<body>
 
+<body>
   <ul>
     <li><a href="index.html">HeatMap</a></li>
     <li><a href="page2.html">Stack Diagram</a></li>
@@ -22,23 +18,43 @@
     <li><a href="page4.html">Scatterplot Diagram</a></li>
     <li><a href="page5.html">Sun Burst Diagram</a></li>
   </ul>
-
 </br>
 <div id="checkBoxes">
   <b>Year</b></br>
-  <input type="checkbox" name="vehicle1" value="2003">2003<br>
-  <input type="checkbox" name="vehicle2" value="2008">2008<br>
-  <input type="checkbox" name="vehicle3" value="2013" checked>2013<br></br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2003" value="2003" checked>2003<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2004" value="2004" checked>2004<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2005" value="2005" checked>2005<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2006" value="2006" checked>2006<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2007" value="2007" checked>2007<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2008" value="2008" checked>2008<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2009" value="2009" checked>2009<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2010" value="2010" checked>2010<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2011" value="2011" checked>2011<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2012" value="2012" checked>2012<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2013" value="2013" checked>2013<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2014" value="2014" checked>2014<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2015" value="2015"checked>2015<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2016" value="2016" checked>2016<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2017" value="2017" checked>2017<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2018" value="2018" checked>2018<br></br>
 
   <b>Type of crime</b></br>
-  <input type="checkbox" value="Murder">Murder<br>
-  <input type="checkbox" value="CarAccident">Car Accident<br>
-  <input type="checkbox" value="BankRobbery" checked>Bank Robbery<br></br>
+  <input type="checkbox" onchange="checkFunction()" id="Break And Enter Commercial" value="Break And Enter Commercial" checked>Break And Enter Commercial<br>
+  <input type="checkbox" onchange="checkFunction()" id="Break And Enter Residential/Other" value="Break And Enter Residential/Other" checked>Break And Enter Residential/Other<br>
+  <input type="checkbox" onchange="checkFunction()" id="Mischief" value="Mischief" checked>Mischief<br>
+  <input type="checkbox" onchange="checkFunction()" id="Other Theft" value="Other Theft" checked>Other Theft<br>
+  <input type="checkbox" onchange="checkFunction()" id="Theft From Vehicle" value="Theft From Vehicle" checked>Theft From Vehicle<br>
+  <input type="checkbox" onchange="checkFunction()" id="Theft Of Bicycle" value="Theft Of Bicycle" checked>Theft Of Vehicle<br>
+  <input type="checkbox" onchange="checkFunction()" id="Theft Of Vehicle" value="Theft Of Vehicle" checked>Theft Of Vehicle<br>
+  <input type="checkbox" onchange="checkFunction()" id="Vehicle Collision Or Pedestrian Struck With Fatality" value="Vehicle Collision Or Pedestrian Struck With Fatality" checked>Vehicle Collision Or Pedestrian Struck With Fatality<br>
+  <input type="checkbox" onchange="checkFunction()" id="Vehicle Collision Or Pedestrian Struck With Injury" value="Vehicle Collision Or Pedestrian Struck With Injury " checked>Vehicle Collision Or Pedestrian Struck With Injury <br></br>
 
+  <!--
   <b>Neighborhood</b></br>
   <input type="checkbox" value="neighborhood1">Neighborhood 1<br>
   <input type="checkbox" value="neighborhood2">Neighborhood 2<br>
   <input type="checkbox" value="neighborhood3" checked>Neighborhood 3<br>
+  -->
 </div>
 
 </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
