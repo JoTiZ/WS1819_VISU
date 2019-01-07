@@ -41,8 +41,8 @@ public class main {
 			]
              */
             
-            occurencies.add(" type: \"scatter\",\n toolTipContent: \"<b>Year: </b>{x} <br/><b>"+
-            		"Number of crimes: </b>{y}\",\n dataPoints: [\n");
+            occurencies.add("[{ \n \"type\": \"scatter\",\n \"toolTipContent\": \"<b>Year: </b>{x} <br/><b>"+
+            		"Number of crimes: </b>{y}\",\n \"dataPoints\": [\n");
             for (int i = 0; i < yearsWithoutDuplicates.size(); i++) {
                 int counter = 0;
                 final int currentYear = yearsWithoutDuplicates.get(i);
@@ -53,12 +53,13 @@ public class main {
                 }
                 controller += counter;
                 if (i != (yearsWithoutDuplicates.size()-1)) {
-                	occurencies.add("\t {x: " + currentYear + ", y:" + counter + "},\n");
+                	occurencies.add("{\"x\": " + currentYear + ", \"y\":" + counter + "},\n");
                 } else {
-                	occurencies.add("\t {x: " + currentYear + ", y:" + counter + "}\n ]");
+                	occurencies.add("{\"x\": " + currentYear + ", \"y\":" + counter + "}\n ]");
                 }
                 
             }
+            occurencies.add("}]");
             
             
 StringBuilder builder = new StringBuilder();

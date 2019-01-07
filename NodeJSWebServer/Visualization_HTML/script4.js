@@ -1,3 +1,19 @@
+var url = "/dataScatterPlot.txt";
+
+var allData;
+
+var jsonFile = new XMLHttpRequest();
+    jsonFile.open("GET",url,true);
+	jsonFile.setRequestHeader("Content-Type", "application/json");
+    jsonFile.send();
+
+    jsonFile.onreadystatechange = function() {
+        if (jsonFile.readyState== 4 && jsonFile.status == 200) {
+          allData = jsonFile.responseText;
+        }
+     }
+	 //alert(allData);
+
 window.onload = function () {
   chartThree();
 
@@ -9,6 +25,8 @@ window.onload = function () {
 
 function chartThree()
 {
+  var data = JSON.parse(allData);
+	
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	zoomEnabled: true,
@@ -46,28 +64,7 @@ fontSize: 15
 		maximum: 55000,
 		valueFormatString: "##.###"
 	},
-	data: [{
-	    type: "scatter",
-	    toolTipContent: "<b>Year: </b>{x} <br/><b>Number of crimes: </b>{y}",
-	    dataPoints: [
-	   	 {x: 2003, y:49934},
-	   	 {x: 2004, y:49268},
-	   	 {x: 2005, y:44665},
-	   	 {x: 2006, y:42307},
-	   	 {x: 2007, y:37693},
-	   	 {x: 2008, y:35417},
-	   	 {x: 2009, y:32167},
-	   	 {x: 2010, y:29706},
-	   	 {x: 2011, y:28572},
-	   	 {x: 2012, y:29227},
-	   	 {x: 2013, y:29081},
-	   	 {x: 2014, y:32648},
-	   	 {x: 2015, y:34360},
-	   	 {x: 2016, y:37833},
-	   	 {x: 2017, y:36988},
-	   	 {x: 2018, y:36980}
-	    ]
-	}]
+	data: data
 });
 chart.render();
 }
