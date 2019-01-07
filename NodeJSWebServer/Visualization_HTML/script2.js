@@ -11,12 +11,12 @@ var jsonFile = new XMLHttpRequest();
           allData = jsonFile.responseText;
         }
      }
+	 //alert(allData);
 
 
 window.onload = function () {
   chartOne();
-
-
+  
 } ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function chartOne()
