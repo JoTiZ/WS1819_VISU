@@ -4,6 +4,7 @@ var allData;
 
 var jsonFile = new XMLHttpRequest();
     jsonFile.open("GET",url,true);
+	jsonFile.setRequestHeader("Content-Type", "application/json")
     jsonFile.send();
 
     jsonFile.onreadystatechange = function() {
