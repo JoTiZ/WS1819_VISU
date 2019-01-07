@@ -26,6 +26,8 @@ window.onload = function () {
 function chartThree()
 {
   var data = JSON.parse(allData);
+  document.getElementById("AllCrimes").checked=true;
+  document.getElementById("All Neighborhoods").checked=true;  
 	
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,

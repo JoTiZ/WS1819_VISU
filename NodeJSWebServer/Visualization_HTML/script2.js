@@ -20,10 +20,19 @@ window.onload = function () {
   
 } ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function radioFunction(){
+
+	
+}
+
+
+
+
 function chartOne()
 {
   var data = JSON.parse(allData);
-
+  document.getElementById("AllCrimes").checked=true;
+  document.getElementById("All Neighborhoods").checked=true;
 	
   var chart = new CanvasJS.Chart("chartContainer", {
   	animationEnabled: true,
