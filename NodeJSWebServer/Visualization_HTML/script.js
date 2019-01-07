@@ -50,6 +50,36 @@ function uncheckAll()
   document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked = false;
 }
 
+function uncheckAll2()
+{
+  document.getElementById("radioAll").checked = false;
+  document.getElementById("radio2003").checked = false;
+  document.getElementById("radio2004").checked = false;
+  document.getElementById("radio2005").checked = false;
+  document.getElementById("radio2006").checked = false;
+  document.getElementById("radio2007").checked = false;
+  document.getElementById("radio2008").checked = false;
+  document.getElementById("radio2009").checked = false;
+  document.getElementById("radio2010").checked = false;
+  document.getElementById("radio2011").checked = false;
+  document.getElementById("radio2012").checked = false;
+  document.getElementById("radio2013").checked = false;
+  document.getElementById("radio2014").checked = false;
+  document.getElementById("radio2015").checked = false;
+  document.getElementById("radio2016").checked = false;
+  document.getElementById("radio2017").checked = false;
+  document.getElementById("radio2018").checked = false;
+  document.getElementById("BreakAndEnterCommercial").checked = false;
+  document.getElementById("BreakAndEnterResidentialOther").checked = false;
+  document.getElementById("Mischief").checked = false;
+  document.getElementById("OtherTheft").checked = false;
+  document.getElementById("TheftFromVehicle").checked = false;
+  document.getElementById("TheftOfBicycle").checked = false;
+  document.getElementById("TheftOfVehicle").checked = false;
+  document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked = false;
+  document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked = false;
+}
+
 function radioFunction()
 {
   if(document.getElementById("radioAll").checked == true)
@@ -58,6 +88,201 @@ function radioFunction()
     loadDataAgain("/HeatMapConvertedData/ALL_DATA.txt");
     uncheckAll();
   }
+  ////////////////////////////////////////////////////////////////////////////////
+  else if (document.getElementById("radio2003").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2003.txt");
+  }
+  else if (document.getElementById("radio2004").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2004.txt");
+  }
+  else if (document.getElementById("radio2005").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2005.txt");
+  }
+  else if (document.getElementById("radio2006").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2006.txt");
+  }
+  else if (document.getElementById("radio2007").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2007.txt");
+  }
+  else if (document.getElementById("radio2008").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2008.txt");
+  }
+  else if (document.getElementById("radio2009").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2009.txt");
+  }
+  else if (document.getElementById("radio2010").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2010.txt");
+  }
+  else if (document.getElementById("radio2011").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2011.txt");
+  }
+  else if (document.getElementById("radio2012").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2012.txt");
+  }
+  else if (document.getElementById("radio2013").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2013.txt");
+  }
+  else if (document.getElementById("radio2014").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2014.txt");
+  }
+  else if (document.getElementById("radio2015").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2015.txt");
+  }
+  else if (document.getElementById("radio2016").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2016.txt");
+  }
+  else if (document.getElementById("radio2017").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2017.txt");
+  }
+  else if (document.getElementById("radio2018").checked == true
+  && document.getElementById("BreakAndEnterCommercial").checked == false
+  && document.getElementById("BreakAndEnterResidentialOther").checked == false
+  && document.getElementById("Mischief").checked == false
+  && document.getElementById("OtherTheft").checked == false
+  && document.getElementById("TheftFromVehicle").checked == false
+  && document.getElementById("TheftOfBicycle").checked == false
+  && document.getElementById("TheftOfVehicle").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == false
+  && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == false)  {
+    loadDataAgain("/HeatMapConvertedData/Years/2018.txt");
+  }
+
+
   ////////////////////////////////////////////////////////////////////////////////
   else if (document.getElementById("radio2003").checked == true && document.getElementById("BreakAndEnterCommercial").checked == true)  {
     loadDataAgain("/HeatMapConvertedData/2003Break_and_Enter_Commercial.txt");
