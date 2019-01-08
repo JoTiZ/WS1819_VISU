@@ -2,6 +2,7 @@ var url = "/dataScatterPlot.txt";
 
 var allData;
 var allDataObjects = [];
+var currentData = [];
 
 var jsonFile = new XMLHttpRequest();
     jsonFile.open("GET",url,true);
@@ -12,11 +13,15 @@ var jsonFile = new XMLHttpRequest();
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
 		  allDataObjects = JSON.parse(allData);
+		  currentData = allDataObjects;
         }
      }
 	 //alert(allData);
 
 window.onload = function () {
+
+  document.getElementById("AllCrimes").checked=true;
+  document.getElementById("All Neighborhoods").checked=true; 
   chartThree();
 
 }
@@ -29,7 +34,7 @@ function radioCrimeFunction(){
 			selectedCrime = radios[i].value;
 		}
 	}
-	alert(selectedCrime);
+	console.log(selectedCrime);
 	
 }
 
@@ -41,16 +46,12 @@ function radioNeighborhoodFunction(){
 			selectedNeighborhood = radios[i].value;
 		}
 	}
-	alert(selectedNeighborhood);
+	console.log(selectedNeighborhood);
 	
 }
 
-
 function chartThree()
-{
-
-  document.getElementById("AllCrimes").checked=true;
-  document.getElementById("All Neighborhoods").checked=true;  
+{ 
 	
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
@@ -89,7 +90,7 @@ fontSize: 15
 		maximum: 55000,
 		valueFormatString: "##.###"
 	},
-	data: allDataObjects
+	data: currentData
 });
 chart.render();
 }
