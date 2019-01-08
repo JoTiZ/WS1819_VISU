@@ -4,6 +4,16 @@ var allObjects = [];
 var recentObjects = [];
 var checkedYearBoxes = [];
 var checkedCrimeBoxes = [];
+//chart-variables with length 24
+var breakAndEnterCommercial = [24];
+var breakAndEnterResidentialOther = [24];
+var michief = [24];
+var otherTheft = [24];
+var theftFromVehicle = [24];
+var theftOfBicycle = [24];
+var theftOfVehicle = [24];
+var vehicleCollisionOrPedestrianStruckWithFatality = [24];
+var vehicleCollisionOrPedestrianStruckWithInjury = [24];
 
 var jsonFile = new XMLHttpRequest();
     jsonFile.open("GET",url,true);
@@ -135,10 +145,10 @@ function checkFunction(){
     checkedCrimeBoxes.push("VehicleCollisionOrPedestrianStruckWithInjury");
   }
   console.log("##INFO## ==> checkbox state changed");
-  loadNeededData();
+  loadNeededObjectData();
 }
 
-function loadNeededData(){
+function loadNeededObjectData(){
   //filter for recent used objects (year & typeofcrime)
   var tmpYearArray = [];
   var tmpCrimeArray = [];
@@ -161,11 +171,11 @@ function loadNeededData(){
       }
   }
   console.log("##INFO## ==> new dataset created: " + recentObjects.length + " objects active");
+  drawChartTwo();
 }
 
 //function for init loading or all checked
-function chartTwoInit()
-{
+function chartTwoInit(){
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	axisX: {
@@ -184,11 +194,9 @@ function chartTwoInit()
 	},
 	legend:{
 		cursor: "pointer",
-		itemclick: toggleDataSeries
+		itemclick: toggleDataSeries,
+    fontSize: 14
 	},
-  legend:{
-    fontSize: 15,
-   },
   data: [
   { // TYPE OF CRIME:: "Break and Enter Commercial"
 	type: "stackedBar",
@@ -531,8 +539,6 @@ function chartTwoInit()
 ]
 });
 chart.render();
-}
-
 
 function toggleDataSeries(e) {
 	if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
@@ -543,4 +549,9 @@ function toggleDataSeries(e) {
 	}
 	chart.render();
 }
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+}
+
+function drawChartTwo(){
+}
