@@ -1,6 +1,7 @@
 var url = "/dataStackedBarDiagram.txt";
 var allData;
-var recentData;
+var allObjects = [];
+var recentObjects = [];
 var checkedYearBoxes = [];
 var checkedCrimeBoxes = [];
 
@@ -11,13 +12,15 @@ var jsonFile = new XMLHttpRequest();
     jsonFile.onreadystatechange = function() {
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
-          alert("all Data is now available");
+          allObjects = JSON.parse(allData);
+          console.log("##INFO## ==> all data is now live & parsed");
         }
      }
 
 window.onload = function () {
   recheckAllBoxes();
   chartTwo();
+  console.log("##INFO## ==> chart generated");
 }
 
 function recheckAllBoxes(){
@@ -45,7 +48,8 @@ function recheckAllBoxes(){
   document.getElementById("Theft Of Bicycle").checked = true;
   document.getElementById("Theft Of Vehicle").checked = true;
   document.getElementById("Vehicle Collision Or Pedestrian Struck With Fatality").checked = true;
-  document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked = true
+  document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked = true;
+  console.log("##INFO## ==> rechecked all boxes");
 }
 
 function checkFunction(){
@@ -129,25 +133,34 @@ function checkFunction(){
   if(document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked == true){
     checkedCrimeBoxes.push("Vehicle Collision Or Pedestrian Struck With Injury");
   }
-  console.log(checkedYearBoxes);
-  console.log(checkedCrimeBoxes);
+  console.log("##INFO## ==> checkbox changed state");
   loadNeededData();
 }
 
 function loadNeededData(){
+  //filter for recent used objects (year & typeofcrime)
   var tmpYearArray = [];
-  var tmpFinalArray = [];
-  recentData = JSON.parse(allData);
+  var tmpCrimeArray = [];
+  recentObjects.length = 0;
+  //find the checked years
   for(var j = 0; j <= checkedYearBoxes.length; j++){
-    for (var i = 0; i < recentData.length; i++){
-      if (recentData[i].year == checkedYearBoxes[j]){
-        tmpYearArray.push(recentData[i]);
+    for (var i = 0; i < allObjects.length; i++){
+      if (allObjects[i].year == checkedYearBoxes[j]){
+        tmpYearArray.push(allObjects[i]);
       }
     }
   }
-  alert(tmpYearArray.length);
+  //find the checked type of checkedCrimeBoxes
+  for(var j = 0; j <= checkedCrimeBoxes.length; j++){
+      for(var i = 0; i < tmpYearArray.length; i++){
+        if(tmpYearArray[i].type == checkedCrimeBoxes[j]){
+          recentObjects.push(tmpYearArray[i]);
+        }
+      }
+  }
+  alert(recentObjects.length);
+  console.log("##INFO## ==> new recent dataset created");
 }
-  //console.log(recentData);
 
 function chartTwo()
 {
