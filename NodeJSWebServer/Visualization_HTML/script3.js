@@ -21,7 +21,7 @@ var jsonFile = new XMLHttpRequest();
 window.onload = function () {
   recheckAllBoxes();
   chartTwoInit();
-  console.log("##INFO## ==> chart generated");
+  console.log("##INFO## ==> init chart generated");
 }
 
 function recheckAllBoxes(){
@@ -134,9 +134,7 @@ function checkFunction(){
   if(document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == true){
     checkedCrimeBoxes.push("VehicleCollisionOrPedestrianStruckWithInjury");
   }
-  console.log("##INFO## ==> checkbox changed state");
-  alert(checkedYearBoxes);
-  alert(checkedCrimeBoxes);
+  console.log("##INFO## ==> checkbox state changed");
   loadNeededData();
 }
 
@@ -162,8 +160,7 @@ function loadNeededData(){
         }
       }
   }
-  alert(recentObjects.length);
-  console.log("##INFO## ==> new dataset created");
+  console.log("##INFO## ==> new dataset created: " + recentObjects.length + " objects active");
 }
 
 //function for init loading or all checked
