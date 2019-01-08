@@ -13,13 +13,14 @@ var jsonFile = new XMLHttpRequest();
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
           allObjects = JSON.parse(allData);
+          console.log(allObjects);
           console.log("##INFO## ==> all data is now live & parsed");
         }
      }
 
 window.onload = function () {
   recheckAllBoxes();
-  chartTwo();
+  chartTwoInit();
   console.log("##INFO## ==> chart generated");
 }
 
@@ -40,15 +41,15 @@ function recheckAllBoxes(){
   document.getElementById("cb2016").checked = true;
   document.getElementById("cb2017").checked = true;
   document.getElementById("cb2018").checked = true;
-  document.getElementById("Break And Enter Commercial").checked = true;
-  document.getElementById("Break And Enter Residential/Other").checked = true;
+  document.getElementById("BreakAndEnterCommercial").checked = true;
+  document.getElementById("BreakAndEnterResidentialOther").checked = true;
   document.getElementById("Mischief").checked = true;
-  document.getElementById("Other Theft").checked = true;
-  document.getElementById("Theft From Vehicle").checked = true;
-  document.getElementById("Theft Of Bicycle").checked = true;
-  document.getElementById("Theft Of Vehicle").checked = true;
-  document.getElementById("Vehicle Collision Or Pedestrian Struck With Fatality").checked = true;
-  document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked = true;
+  document.getElementById("OtherTheft").checked = true;
+  document.getElementById("TheftFromVehicle").checked = true;
+  document.getElementById("TheftOfBicycle").checked = true;
+  document.getElementById("TheftOfVehicle").checked = true;
+  document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked = true;
+  document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked = true;
   console.log("##INFO## ==> rechecked all boxes");
 }
 
@@ -106,34 +107,36 @@ function checkFunction(){
 
   //check witch crimes are checked
   checkedCrimeBoxes.length = 0;
-  if(document.getElementById("Break And Enter Commercial").checked == true){
-    checkedCrimeBoxes.push("Break And Enter Commercial");
+  if(document.getElementById("BreakAndEnterCommercial").checked == true){
+    checkedCrimeBoxes.push("BreakAndEnterCommercial");
   }
-  if(document.getElementById("Break And Enter Residential/Other").checked == true){
-    checkedCrimeBoxes.push("Break And Enter Residential/Other");
+  if(document.getElementById("BreakAndEnterResidentialOther").checked == true){
+    checkedCrimeBoxes.push("BreakAndEnterResidentialOther");
   }
   if(document.getElementById("Mischief").checked == true){
     checkedCrimeBoxes.push("Mischief");
   }
-  if(document.getElementById("Other Theft").checked == true){
-    checkedCrimeBoxes.push("Other Theft");
+  if(document.getElementById("OtherTheft").checked == true){
+    checkedCrimeBoxes.push("OtherTheft");
   }
-  if(document.getElementById("Theft From Vehicle").checked == true){
-    checkedCrimeBoxes.push("Theft From Vehicle");
+  if(document.getElementById("TheftFromVehicle").checked == true){
+    checkedCrimeBoxes.push("TheftFromVehicle");
   }
-  if(document.getElementById("Theft Of Bicycle").checked == true){
-    checkedCrimeBoxes.push("Theft Of Bicycle");
+  if(document.getElementById("TheftOfBicycle").checked == true){
+    checkedCrimeBoxes.push("TheftOfBicycle");
   }
-  if(document.getElementById("Theft Of Vehicle").checked == true){
-    checkedCrimeBoxes.push("Theft Of Vehicle");
+  if(document.getElementById("TheftOfVehicle").checked == true){
+    checkedCrimeBoxes.push("TheftOfVehicle");
   }
-  if(document.getElementById("Vehicle Collision Or Pedestrian Struck With Fatality").checked == true){
-    checkedCrimeBoxes.push("Vehicle Collision Or Pedestrian Struck With Fatality");
+  if(document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == true){
+    checkedCrimeBoxes.push("VehicleCollisionOrPedestrianStruckWithFatality");
   }
-  if(document.getElementById("Vehicle Collision Or Pedestrian Struck With Injury").checked == true){
-    checkedCrimeBoxes.push("Vehicle Collision Or Pedestrian Struck With Injury");
+  if(document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == true){
+    checkedCrimeBoxes.push("VehicleCollisionOrPedestrianStruckWithInjury");
   }
   console.log("##INFO## ==> checkbox changed state");
+  alert(checkedYearBoxes);
+  alert(checkedCrimeBoxes);
   loadNeededData();
 }
 
@@ -142,6 +145,7 @@ function loadNeededData(){
   var tmpYearArray = [];
   var tmpCrimeArray = [];
   recentObjects.length = 0;
+
   //find the checked years
   for(var j = 0; j <= checkedYearBoxes.length; j++){
     for (var i = 0; i < allObjects.length; i++){
@@ -159,10 +163,11 @@ function loadNeededData(){
       }
   }
   alert(recentObjects.length);
-  console.log("##INFO## ==> new recent dataset created");
+  console.log("##INFO## ==> new dataset created");
 }
 
-function chartTwo()
+//function for init loading or all checked
+function chartTwoInit()
 {
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
