@@ -1,4 +1,4 @@
-var url = "/sbd_data.txt";
+var url = "/dataStackedBarDiagram.txt";
 var allData;
 var recentData;
 var checkedYearBoxes = [];
@@ -11,6 +11,7 @@ var jsonFile = new XMLHttpRequest();
     jsonFile.onreadystatechange = function() {
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
+          alert("allData is read");
         }
      }
 
@@ -130,17 +131,22 @@ function checkFunction(){
   }
   console.log(checkedYearBoxes);
   console.log(checkedCrimeBoxes);
+  loadNeededData();
 }
 
 function loadNeededData(){
-  recentData = JSON.parse('{"year": 2003, "yeeep": "bla"}');
-  //recentData = JSON.parse('{"foo": 1}');
+  //recentData = JSON.parse('{"year": 2003, "yeeep": "bla"}');
+  //recentData = JSON.parse('[{"year": 2003, "type": "Theft of Bicycle", "hood": "Riley Park"}, {"year": 2003, "type": "Break and Enter Residential/Other", "hood": "Grandview-Woodland"}]');
+if(allData.length > 1){
+  alert("wo");
+}
+console.log(allData);
+  recentData = JSON.parse(allData);
   console.log(recentData);
 }
 
 function chartTwo()
 {
-  loadNeededData();
   var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	axisX: {
