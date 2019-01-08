@@ -35,13 +35,17 @@ function radioCrimeFunction(){
 			selectedCrime = radios[i].value;
 		}
 	}
-		
-	for (var i = 0; i < allDataObjects.length; i++){
-		if (selectedCrime === allDataObjects[i]["name"]){
-			currentData = allDataObjects[i];
+	currentData = [];
+	if (selectedCrime != "AllCrimes"){
+		for (var i = 0; i < allDataObjects.length; i++){
+			if (selectedCrime === allDataObjects[i]["name"]){
+				currentData.push(allDataObjects[i]);
+			}
 		}
+	}else{
+		currentData = allDataObjects;
 	}
-
+	
 	//console.log(allDataObjects[0]["name"]);
 	console.log(currentData);
 	chartOne();
