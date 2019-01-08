@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script3.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/sunburst.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+
+<body onload="myFunction()">
+
+  <ul>
+    <li><a href="index.html">HeatMap</a></li>
+    <li><a href="page2.html">Stack Diagram</a></li>
+    <li><a href="page3.html"class="active">Stacked Bar Diagram</a></li>
+    <li><a href="page4.html">Scatterplot Diagram</a></li>
+    <li><a href="page5.html">Sun Burst Diagram</a></li>
+  </ul>
+</br>
+<div id="checkBoxes">
+  <b>Year</b></br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2003" value="2003" checked>2003<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2004" value="2004" checked>2004<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2005" value="2005" checked>2005<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2006" value="2006" checked>2006<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2007" value="2007" checked>2007<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2008" value="2008" checked>2008<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2009" value="2009" checked>2009<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2010" value="2010" checked>2010<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2011" value="2011" checked>2011<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2012" value="2012" checked>2012<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2013" value="2013" checked>2013<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2014" value="2014" checked>2014<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2015" value="2015" checked>2015<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2016" value="2016" checked>2016<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2017" value="2017" checked>2017<br>
+  <input type="checkbox" onchange="checkFunction()" id="cb2018" value="2018" checked>2018<br></br>
+
+  <!--
+  <b>Type of crime</b></br>
+  <input type="checkbox" onchange="checkFunction()" id="BreakAndEnterCommercial" value="BreakAndEnterCommercial" checked>Break And Enter Commercial<br>
+  <input type="checkbox" onchange="checkFunction()" id="BreakAndEnterResidentialOther" value="BreakAndEnterResidentialOther" checked>Break And Enter Residential/Other<br>
+  <input type="checkbox" onchange="checkFunction()" id="Mischief" value="Mischief" checked>Mischief<br>
+  <input type="checkbox" onchange="checkFunction()" id="OtherTheft" value="OtherTheft" checked>Other Theft<br>
+  <input type="checkbox" onchange="checkFunction()" id="TheftFromVehicle" value="TheftFromVehicle" checked>Theft From Vehicle<br>
+  <input type="checkbox" onchange="checkFunction()" id="TheftOfBicycle" value="TheftOfBicycle" checked>Theft Of Bicycle<br>
+  <input type="checkbox" onchange="checkFunction()" id="TheftOfVehicle" value="TheftOfVehicle" checked>Theft Of Vehicle<br>
+  <input type="checkbox" onchange="checkFunction()" id="VehicleCollisionOrPedestrianStruckWithFatality" value="VehicleCollisionOrPedestrianStruckWithFatality" checked>Vehicle Collision Or Pedestrian Struck With Fatality<br>
+  <input type="checkbox" onchange="checkFunction()" id="VehicleCollisionOrPedestrianStruckWithInjury" value="VehicleCollisionOrPedestrianStruckWithInjury " checked>Vehicle Collision Or Pedestrian Struck With Injury <br></br>
+  -->
+
+  <b>Neighborhood</b></br>
+  <input type="checkbox" onchange="checkFunction()" id="Arbutus Ridge" value="Arbutus Ridge" checked>Arbutus Ridge<br>
+  <input type="checkbox" onchange="checkFunction()" id="Central Business District" value="Central Business District" checked>Central Business District<br>
+  <input type="checkbox" onchange="checkFunction()" id="Dunbar-Southlands" value="Dunbar-Southlands" checked>Dunbar-Southlands<br>
+  <input type="checkbox" onchange="checkFunction()" id="Fairview" value="Fairview" checked>Fairview<br>
+  <input type="checkbox" onchange="checkFunction()" id="Grandview-Woodland" value="Grandview-Woodland" checked>Grandview-Woodland<br>
+  <input type="checkbox" onchange="checkFunction()" id="Hastings-Sunrise" value="Hastings-Sunrise" checked>Hastings-Sunrise<br>
+  <input type="checkbox" onchange="checkFunction()" id="Kensington-Cedar Cottage" value="Kensington-Cedar Cottage" checked>Kensington-Cedar Cottage<br>
+  <input type="checkbox" onchange="checkFunction()" id="Kerrisdale" value="Kerrisdale" checked>Kerrisdale<br>
+  <input type="checkbox" onchange="checkFunction()" id="Killarney" value="Killarney" checked>Killarney<br>
+  <input type="checkbox" onchange="checkFunction()" id="Kitsilano" value="Kitsilano" checked>Kitsilano<br>
+  <input type="checkbox" onchange="checkFunction()" id="Marpole" value="Marpole" checked>Marpole<br>
+  <input type="checkbox" onchange="checkFunction()" id="Mount Pleasant" value="Mount Pleasant" checked>Mount Pleasant<br>
+  <input type="checkbox" onchange="checkFunction()" id="Musqueam" value="Musqueam" checked>Musqueam<br>
+  <input type="checkbox" onchange="checkFunction()" id="Oakridge" value="Oakridge" checked>Oakridge<br>
+  <input type="checkbox" onchange="checkFunction()" id="Renfrew-Collingwood" value="Renfrew-Collingwood" checked>Renfrew-Collingwood<br>
+  <input type="checkbox" onchange="checkFunction()" id="Riley Park" value="Riley Park" checked>Riley Park<br>
+  <input type="checkbox" onchange="checkFunction()" id="Shaughnessy" value="Shaughnessy" checked>Shaughnessy<br>
+  <input type="checkbox" onchange="checkFunction()" id="South Cambie" value="South Cambie" checked>South Cambie<br>
+  <input type="checkbox" onchange="checkFunction()" id="Stanley Park" value="Stanley Park" checked>Stanley Park<br>
+  <input type="checkbox" onchange="checkFunction()" id="Strathcona" value="Strathcona" checked>Strathcona<br>
+  <input type="checkbox" onchange="checkFunction()" id="Sunset" value="Sunset" checked>Sunset<br>
+  <input type="checkbox" onchange="checkFunction()" id="Victoria-Fraserview" value="Victoria-Fraserview" checked>Victoria-Fraserview<br>
+  <input type="checkbox" onchange="checkFunction()" id="West End" value="West End" checked>West End<br>
+  <input type="checkbox" onchange="checkFunction()" id="West Point Grey" value="West Point Grey" checked>West Point Grey<br></br>
+</div>
+
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+<div id="loader"></div>
+
+<div id="chartContainer" style="height: 100%; width: 80%;"></div>
+
+<!--
+  <div class="slidecontainer2">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <div id="demo"></div>
+  </div>
+-->
+
+</body>
+</html>
