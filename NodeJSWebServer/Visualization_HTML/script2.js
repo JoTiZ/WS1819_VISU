@@ -2,6 +2,7 @@ var url = "/dataStackDiagram.txt";
 
 var allData;
 var allDataObjects = [];
+var currentData = [];
 
 var jsonFile = new XMLHttpRequest();
     jsonFile.open("GET",url,true);
@@ -12,12 +13,15 @@ var jsonFile = new XMLHttpRequest();
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
 		  allDataObjects = JSON.parse(allData);
+		  currentData = allDataObjects;
         }
      }
 	 //alert(allData);
 
 
 window.onload = function () {
+  document.getElementById("AllCrimes").checked=true;
+  document.getElementById("All Neighborhoods").checked=true;
   chartOne();
   
 } 
@@ -31,7 +35,16 @@ function radioCrimeFunction(){
 			selectedCrime = radios[i].value;
 		}
 	}
-	alert(selectedCrime);
+		
+	for (var i = 0; i < allDataObjects.length; i++){
+		if (selectedCrime === allDataObjects[i]["name"]){
+			currentData = allDataObjects[i];
+		}
+	}
+
+	//console.log(allDataObjects[0]["name"]);
+	console.log(currentData);
+	chartOne();
 	
 }
 
@@ -43,7 +56,13 @@ function radioNeighborhoodFunction(){
 			selectedNeighborhood = radios[i].value;
 		}
 	}
-	alert(selectedNeighborhood);
+	
+	
+	//No neighborhood in data
+
+	//console.log(allDataObjects[0]["name"]);
+	console.log(selectedNeighborhood);
+	chartOne();
 	
 }
 
@@ -52,8 +71,6 @@ function radioNeighborhoodFunction(){
 
 function chartOne()
 {
-  document.getElementById("AllCrimes").checked=true;
-  document.getElementById("All Neighborhoods").checked=true;
 	
   var chart = new CanvasJS.Chart("chartContainer", {
   	animationEnabled: true,
@@ -87,7 +104,7 @@ function chartOne()
   	toolTip:{
   		shared: true
   	},
-  	data: allDataObjects
+  	data: currentData
 
   });
   chart.render();
