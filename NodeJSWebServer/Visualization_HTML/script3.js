@@ -3,7 +3,8 @@ var allData;
 var allObjects = [];
 var recentObjects = [];
 var checkedYearBoxes = [];
-var checkedCrimeBoxes = [];
+//var checkedCrimeBoxes = [];
+var checkedHoodBoxes = [];
 //chart-variables with length 24
 var breakAndEnterCommercial = [24];
 var breakAndEnterResidentialOther = [24];
@@ -34,6 +35,25 @@ window.onload = function () {
   console.log("##INFO## ==> init chart generated");
 }
 
+
+
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  //document.getElementById("myDiv").style.display = "block";
+  //document.getElementById("chartContainer").style.display = "non";
+  chartTwoInit();
+}
+
+
+
+
+
 function recheckAllBoxes(){
   document.getElementById("cb2003").checked = true;
   document.getElementById("cb2004").checked = true;
@@ -51,15 +71,40 @@ function recheckAllBoxes(){
   document.getElementById("cb2016").checked = true;
   document.getElementById("cb2017").checked = true;
   document.getElementById("cb2018").checked = true;
-  document.getElementById("BreakAndEnterCommercial").checked = true;
-  document.getElementById("BreakAndEnterResidentialOther").checked = true;
-  document.getElementById("Mischief").checked = true;
-  document.getElementById("OtherTheft").checked = true;
-  document.getElementById("TheftFromVehicle").checked = true;
-  document.getElementById("TheftOfBicycle").checked = true;
-  document.getElementById("TheftOfVehicle").checked = true;
-  document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked = true;
-  document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked = true;
+  //document.getElementById("BreakAndEnterCommercial").checked = true;
+  //document.getElementById("BreakAndEnterResidentialOther").checked = true;
+  //document.getElementById("Mischief").checked = true;
+  //document.getElementById("OtherTheft").checked = true;
+  //document.getElementById("TheftFromVehicle").checked = true;
+  //document.getElementById("TheftOfBicycle").checked = true;
+  //document.getElementById("TheftOfVehicle").checked = true;
+  //document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked = true;
+  //document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked = true;
+  document.getElementById("Arbutus Ridge").checked = true;
+  document.getElementById("Central Business District").checked = true;
+  document.getElementById("Dunbar-Southlands").checked = true;
+  document.getElementById("Fairview").checked = true;
+  document.getElementById("Grandview-Woodland").checked = true;
+  document.getElementById("Hastings-Sunrise").checked = true;
+  document.getElementById("Kensington-Cedar Cottage").checked = true;
+  document.getElementById("Kerrisdale").checked = true;
+  document.getElementById("Killarney").checked = true;
+  document.getElementById("Kitsilano").checked = true;
+  document.getElementById("Marpole").checked = true;
+  document.getElementById("Mount Pleasant").checked = true;
+  document.getElementById("Musqueam").checked = true;
+  document.getElementById("Oakridge").checked = true;
+  document.getElementById("Renfrew-Collingwood").checked = true;
+  document.getElementById("Riley Park").checked = true;
+  document.getElementById("Shaughnessy").checked = true;
+  document.getElementById("South Cambie").checked = true;
+  document.getElementById("Stanley Park").checked = true;
+  document.getElementById("Strathcona").checked = true;
+  document.getElementById("Sunset").checked = true;
+  document.getElementById("Victoria-Fraserview").checked = true;
+  document.getElementById("West End").checked = true;
+  document.getElementById("West Point Grey").checked = true;
+
   console.log("##INFO## ==> rechecked all boxes");
 }
 
@@ -115,6 +160,7 @@ function checkFunction(){
     checkedYearBoxes.push("2018");
   }
 
+/*
   //check witch crimes are checked
   checkedCrimeBoxes.length = 0;
   if(document.getElementById("BreakAndEnterCommercial").checked == true){
@@ -144,6 +190,81 @@ function checkFunction(){
   if(document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == true){
     checkedCrimeBoxes.push("VehicleCollisionOrPedestrianStruckWithInjury");
   }
+*/
+  //check witch hoods are checked
+  checkedHoodBoxes.length = 0;
+  if(document.getElementById("Arbutus Ridge").checked == true){
+    checkedHoodBoxes.push("Arbutus Ridge");
+  }
+  if(document.getElementById("Central Business District").checked == true){
+    checkedHoodBoxes.push("Central Business District");
+  }
+  if(document.getElementById("Dunbar-Southlands").checked == true){
+    checkedHoodBoxes.push("Dunbar-Southlands");
+  }
+  if(document.getElementById("Fairview").checked == true){
+    checkedHoodBoxes.push("Fairview");
+  }
+  if(document.getElementById("Grandview-Woodland").checked == true){
+    checkedHoodBoxes.push("Grandview-Woodland");
+  }
+  if(document.getElementById("Hastings-Sunrise").checked == true){
+    checkedHoodBoxes.push("Hastings-Sunrise");
+  }
+  if(document.getElementById("Kensington-Cedar Cottage").checked == true){
+    checkedHoodBoxes.push("Kensington-Cedar Cottage");
+  }
+  if(document.getElementById("Kerrisdale").checked == true){
+    checkedHoodBoxes.push("Kerrisdale");
+  }
+  if(document.getElementById("Killarney").checked == true){
+    checkedHoodBoxes.push("Killarney");
+  }
+  if(document.getElementById("Kitsilano").checked == true){
+    checkedHoodBoxes.push("Kitsilano");
+  }
+  if(document.getElementById("Marpole").checked == true){
+    checkedHoodBoxes.push("Marpole");
+  }
+  if(document.getElementById("Mount Pleasant").checked == true){
+    checkedHoodBoxes.push("Mount Pleasant");
+  }
+  if(document.getElementById("Musqueam").checked == true){
+    checkedHoodBoxes.push("Musqueam");
+  }
+  if(document.getElementById("Oakridge").checked == true){
+    checkedHoodBoxes.push("Oakridge");
+  }
+  if(document.getElementById("Renfrew-Collingwood").checked == true){
+    checkedHoodBoxes.push("Renfrew-Collingwood");
+  }
+  if(document.getElementById("Riley Park").checked == true){
+    checkedHoodBoxes.push("Riley Park");
+  }
+  if(document.getElementById("Shaughnessy").checked == true){
+    checkedHoodBoxes.push("Shaughnessy");
+  }
+  if(document.getElementById("South Cambie").checked == true){
+    checkedHoodBoxes.push("South Cambie");
+  }
+  if(document.getElementById("Stanley Park").checked == true){
+    checkedHoodBoxes.push("Stanley Park");
+  }
+  if(document.getElementById("Strathcona").checked == true){
+    checkedHoodBoxes.push("Strathcona");
+  }
+  if(document.getElementById("Sunset").checked == true){
+    checkedHoodBoxes.push("Sunset");
+  }
+  if(document.getElementById("Victoria-Fraserview").checked == true){
+    checkedHoodBoxes.push("Victoria-Fraserview");
+  }
+  if(document.getElementById("West End").checked == true){
+    checkedHoodBoxes.push("West End");
+  }
+  if(document.getElementById("West Point Grey").checked == true){
+    checkedHoodBoxes.push("West Point Grey");
+  }
   console.log("##INFO## ==> checkbox state changed");
   loadNeededObjectData();
 }
@@ -151,7 +272,8 @@ function checkFunction(){
 function loadNeededObjectData(){
   //filter for recent used objects (year & typeofcrime)
   var tmpYearArray = [];
-  var tmpCrimeArray = [];
+  //var tmpCrimeArray = [];
+  var tmpHoodArray = [];
   recentObjects.length = 0;
 
   //find the checked years
@@ -162,16 +284,15 @@ function loadNeededObjectData(){
       }
     }
   }
-  //find the checked type of checkedCrimeBoxes
-  for(var j = 0; j <= checkedCrimeBoxes.length; j++){
+  //find the checked type of checkedHoodBoxes
+  for(var j = 0; j <= checkedHoodBoxes.length; j++){
       for(var i = 0; i < tmpYearArray.length; i++){
-        if(tmpYearArray[i].type == checkedCrimeBoxes[j]){
+        if(tmpYearArray[i].hood == checkedHoodBoxes[j]){
           recentObjects.push(tmpYearArray[i]);
         }
       }
   }
   console.log("##INFO## ==> new dataset created: " + recentObjects.length + " objects active");
-  drawChartTwo();
 }
 
 //function for init loading or all checked
@@ -298,40 +419,6 @@ function chartTwoInit(){
       { x: 1, y: 968 }       // West Point Grey
 		]
 	},
-/*	{ // TYPE OF CRIME:: "Offence Against a Person" !!!!NO DATA - PRIVACY!!!!
-		type: "stackedBar",
-		name: "Offence Against a Person",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 341 },     // Arbutus Ridge
-			{ x: 23, y: 181 },     // Central Business District
-			{ x: 22, y: 305 },     // Dunbar-Southlands
-      { x: 21, y: 318 },    // Fairview
-      { x: 20, y: 286 },    // Grandview-Woodland
-			{ x: 19, y: 991 },    // Hastings-Sunrise
-			{ x: 18, y: 157 },    // Kensington-Cedar Cottage
-      { x: 17, y: 359 },    // Kerrisdale
-      { x: 16, y: 333 },    // Killarney
-			{ x: 15, y: 231 },    // Kitsilano
-			{ x: 14, y: 115 },    // Marpole
-      { x: 13, y: 306 },    // Mount Pleasant
-      { x: 12, y: 18 },     // Musqueam
-			{ x: 11, y: 356 },    // Oakridge
-			{ x: 10, y: 125 },    // Renfrew-Collingwood
-      { x: 9, y: 911 },     // Riley Park
-      { x: 8, y: 141 },     // Shaughnessy
-			{ x: 7, y: 342 },    // South Cambie
-      { x: 6, y: 82 },     // Stanley Park
-      { x: 5, y: 4 },       // Strathcona
-      { x: 4, y: 7 },      // Sunset
-			{ x: 3, y: 5 },      // Victoria-Fraserview
-			{ x: 2, y: 2 },      // West End
-      { x: 1, y: 6 }       // West Point Grey
-		]
-	},*/
   { // TYPE OF CRIME:: "Other Theft"
 		type: "stackedBar",
 		name: "Other Theft",
@@ -551,7 +638,4 @@ function toggleDataSeries(e) {
 }
 
 
-}
-
-function drawChartTwo(){
 }
