@@ -11,7 +11,7 @@ var jsonFile = new XMLHttpRequest();
     jsonFile.onreadystatechange = function() {
         if (jsonFile.readyState== 4 && jsonFile.status == 200) {
           allData = jsonFile.responseText;
-          alert("allData is read");
+          alert("all Data is now available");
         }
      }
 
@@ -135,15 +135,19 @@ function checkFunction(){
 }
 
 function loadNeededData(){
-  //recentData = JSON.parse('{"year": 2003, "yeeep": "bla"}');
-  //recentData = JSON.parse('[{"year": 2003, "type": "Theft of Bicycle", "hood": "Riley Park"}, {"year": 2003, "type": "Break and Enter Residential/Other", "hood": "Grandview-Woodland"}]');
-if(allData.length > 1){
-  alert("wo");
-}
-console.log(allData);
+  var tmpYearArray = [];
+  var tmpFinalArray = [];
   recentData = JSON.parse(allData);
-  console.log(recentData);
+  for(var j = 0; j <= checkedYearBoxes.length; j++){
+    for (var i = 0; i < recentData.length; i++){
+      if (recentData[i].year == checkedYearBoxes[j]){
+        tmpYearArray.push(recentData[i]);
+      }
+    }
+  }
+  alert(tmpYearArray.length);
 }
+  //console.log(recentData);
 
 function chartTwo()
 {
