@@ -7,9 +7,9 @@ var allData;
 var allObjects = [];
 var recentObjects = [];
 var checkedYearBoxes = [];
-//var checkedCrimeBoxes = [];
 var checkedHoodBoxes = [];
-
+var dataPoints;
+var recentChartData = "";
 //chart-variables with length 24
 var breakAndEnterCommercial = [];
 var breakAndEnterResidentialOther = [];
@@ -776,6 +776,286 @@ function loadRecentChartData(){
   redrawChart();
 }
 
+function prepareDataPoints(){
+  var tmp;
+  var allHoodsSet = true;
+
+  if(breakAndEnterCommercial.includes(0) && breakAndEnterResidentialOther.includes(0) &&
+    michief.includes(0) && otherTheft .includes(0) && theftFromVehicle.includes(0) &&
+    theftOfBicycle.includes(0) && theftOfVehicle.includes(0) &&
+    vehicleCollisionOrPedestrianStruckWithFatality.includes(0) &&
+    vehicleCollisionOrPedestrianStruckWithInjury.includes(0)){
+      allHoodsSet = false;
+  }
+
+  if(allHoodsSet){
+    //preparations for BreakAndEnterCommercial
+    tmp = '[{ "type": "stackedBar", "name": "Break and Enter Commercial", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + breakAndEnterCommercial[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + breakAndEnterCommercial[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + breakAndEnterCommercial[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + breakAndEnterCommercial[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + breakAndEnterCommercial[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + breakAndEnterCommercial[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + breakAndEnterCommercial[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + breakAndEnterCommercial[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + breakAndEnterCommercial[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + breakAndEnterCommercial[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + breakAndEnterCommercial[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + breakAndEnterCommercial[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + breakAndEnterCommercial[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + breakAndEnterCommercial[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + breakAndEnterCommercial[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + breakAndEnterCommercial[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + breakAndEnterCommercial[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + breakAndEnterCommercial[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + breakAndEnterCommercial[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + breakAndEnterCommercial[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + breakAndEnterCommercial[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + breakAndEnterCommercial[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + breakAndEnterCommercial[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + breakAndEnterCommercial[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for BreakAndEnterResidentialOther
+    tmp = '{ "type": "stackedBar", "name": "Break and Enter Residential / Other", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + breakAndEnterResidentialOther[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + breakAndEnterResidentialOther[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + breakAndEnterResidentialOther[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + breakAndEnterResidentialOther[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + breakAndEnterResidentialOther[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + breakAndEnterResidentialOther[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + breakAndEnterResidentialOther[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + breakAndEnterResidentialOther[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + breakAndEnterResidentialOther[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + breakAndEnterResidentialOther[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + breakAndEnterResidentialOther[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + breakAndEnterResidentialOther[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + breakAndEnterResidentialOther[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + breakAndEnterResidentialOther[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + breakAndEnterResidentialOther[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + breakAndEnterResidentialOther[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + breakAndEnterResidentialOther[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + breakAndEnterResidentialOther[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + breakAndEnterResidentialOther[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + breakAndEnterResidentialOther[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + breakAndEnterResidentialOther[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + breakAndEnterResidentialOther[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + breakAndEnterResidentialOther[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + breakAndEnterResidentialOther[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for michief
+    tmp = '{ "type": "stackedBar", "name": "Michief", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + michief[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + michief[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + michief[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + michief[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + michief[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + michief[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + michief[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + michief[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + michief[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + michief[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + michief[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + michief[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + michief[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + michief[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + michief[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + michief[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + michief[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + michief[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + michief[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + michief[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + michief[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + michief[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + michief[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + michief[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for otherTheft
+    tmp = '{ "type": "stackedBar", "name": "Other Theft", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + otherTheft[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + otherTheft[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + otherTheft[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + otherTheft[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + otherTheft[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + otherTheft[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + otherTheft[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + otherTheft[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + otherTheft[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + otherTheft[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + otherTheft[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + otherTheft[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + otherTheft[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + otherTheft[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + otherTheft[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + otherTheft[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + otherTheft[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + otherTheft[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + otherTheft[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + otherTheft[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + otherTheft[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + otherTheft[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + otherTheft[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + otherTheft[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for theftFromVehicle
+    tmp = '{ "type": "stackedBar", "name": "Theft From Vehicle", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + theftFromVehicle[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + theftFromVehicle[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + theftFromVehicle[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + theftFromVehicle[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + theftFromVehicle[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + theftFromVehicle[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + theftFromVehicle[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + theftFromVehicle[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + theftFromVehicle[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + theftFromVehicle[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + theftFromVehicle[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + theftFromVehicle[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + theftFromVehicle[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + theftFromVehicle[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + theftFromVehicle[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + theftFromVehicle[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + theftFromVehicle[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + theftFromVehicle[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + theftFromVehicle[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + theftFromVehicle[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + theftFromVehicle[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + theftFromVehicle[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + theftFromVehicle[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + theftFromVehicle[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for theftOfBicycle
+    tmp = '{ "type": "stackedBar", "name": "Theft Of Bicycle", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + theftOfBicycle[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + theftOfBicycle[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + theftOfBicycle[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + theftOfBicycle[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + theftOfBicycle[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + theftOfBicycle[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + theftOfBicycle[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + theftOfBicycle[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + theftOfBicycle[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + theftOfBicycle[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + theftOfBicycle[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + theftOfBicycle[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + theftOfBicycle[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + theftOfBicycle[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + theftOfBicycle[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + theftOfBicycle[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + theftOfBicycle[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + theftOfBicycle[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + theftOfBicycle[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + theftOfBicycle[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + theftOfBicycle[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + theftOfBicycle[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + theftOfBicycle[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + theftOfBicycle[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for theftOfVehicle
+    tmp = '{ "type": "stackedBar", "name": "Theft Of Vehicle", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + theftOfVehicle[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + theftOfVehicle[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + theftOfVehicle[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + theftOfVehicle[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + theftOfVehicle[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + theftOfVehicle[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + theftOfVehicle[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + theftOfVehicle[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + theftOfVehicle[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + theftOfVehicle[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + theftOfVehicle[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + theftOfVehicle[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + theftOfVehicle[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + theftOfVehicle[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + theftOfVehicle[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + theftOfVehicle[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + theftOfVehicle[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + theftOfVehicle[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + theftOfVehicle[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + theftOfVehicle[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + theftOfVehicle[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + theftOfVehicle[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + theftOfVehicle[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + theftOfVehicle[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for vehicleCollisionOrPedestrianStruckWithFatality
+    tmp = '{ "type": "stackedBar", "name": "Vehicle Collision Or Pedestrian Struck With Fatality", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[23] + '}]';
+    tmp += '},';
+    recentChartData += tmp;
+
+    //preparations for vehicleCollisionOrPedestrianStruckWithInjury
+    tmp = '{ "type": "stackedBar", "name": "Vehicle Collision Or Pedestrian Struck With Injury", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+    tmp += '[{ "label": "Arbutus Ridge", "x": 24, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[0] + '},';
+    tmp += '{ "label": "Central Business District", "x": 23, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[1] + '},';
+    tmp += '{ "label": "Dunbar-Southlands", "x": 22, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[2] + '},';
+    tmp += '{ "label": "Fairview", "x": 21, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[3] + '},';
+    tmp += '{ "label": "Grandview-Woodland", "x": 20, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[4] + '},';
+    tmp += '{ "label": "Hastings-Sunrise", "x": 19, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[5] + '},';
+    tmp += '{ "label": "Kensington-Cedar Cottage", "x": 18, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[6] + '},';
+    tmp += '{ "label": "Kerrisdale", "x": 17, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[7] + '},';
+    tmp += '{ "label": "Killarney", "x": 16, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[8] + '},';
+    tmp += '{ "label": "Kitsilano", "x": 15, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[9] + '},';
+    tmp += '{ "label": "Marpole", "x": 14, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[10] + '},';
+    tmp += '{ "label": "Mount Pleasant", "x": 13, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[11] + '},';
+    tmp += '{ "label": "Musqueam", "x": 12, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[12] + '},';
+    tmp += '{ "label": "Oakridge", "x": 11, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[13] + '},';
+    tmp += '{ "label": "Renfrew-Collingwood", "x": 10, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[14] + '},';
+    tmp += '{ "label": "Riley Park", "x": 9, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[15] + '},';
+    tmp += '{ "label": "Shaughnessy", "x": 8, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[16] + '},';
+    tmp += '{ "label": "South Cambie", "x": 7, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[17] + '},';
+    tmp += '{ "label": "Stanley Park", "x": 6, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[18] + '},';
+    tmp += '{ "label": "Strathcona", "x": 5, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[19] + '},';
+    tmp += '{ "label": "Sunset", "x": 4, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[20] + '},';
+    tmp += '{ "label": "Victoria-Fraserview", "x": 3, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[21] + '},';
+    tmp += '{ "label": "West End", "x": 2, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[22] + '},';
+    tmp += '{ "label": "West Point Grey", "x": 1, "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[23] + '}]';
+    recentChartData += tmp;
+
+    recentChartData += '}]';
+  }else{
+    //error :p
+  }
+  dataPoints = JSON.parse(recentChartData);
+  recentChartData = "";
+}
 
 //function for init loading or all checked
 function chartTwoInit(){
@@ -1121,345 +1401,41 @@ chart.render();
 }
 
 function redrawChart(){
-  var dataPointsBreakAndEnterCommercial;
-  var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	axisX: {
-		labelFontSize: 15,
-		labelWrap: true,
-		prefix: " ",
-		interval: 1
-	},
-	axisY: {
-		prefix: " ",
-		labelFontSize: 15,
-		titel: "count"
-	},
-	toolTip: {
-		shared: true
-	},
-	legend:{
-		cursor: "pointer",
-		itemclick: toggleDataSeries,
-    fontSize: 14
-	},
-  data: [
-  { // TYPE OF CRIME:: "Break and Enter Commercial"
-	type: "stackedBar",
-	name: "Break and Enter Commercial",
-	markerSize: 5,
-	showInLegend: "true",
-	xValueFormatString: "",
-	yValueFormatString: "",
-    dataPoints: [
-		{ label: "Arbutus Ridge", x: 24, y: breakAndEnterCommercial[0]},
-		{ label: "Central Business District", x: 23, y: breakAndEnterCommercial[1]},
-		{ label: "Dunbar-Southlands", x: 22, y: breakAndEnterCommercial[2]},
-		{ label: "Fairview", x: 21, y: breakAndEnterCommercial[3] },
-		{ label: "Grandview-Woodland", x: 20, y: breakAndEnterCommercial[4] },
-		{ label: "Hastings-Sunrise", x: 19, y: breakAndEnterCommercial[5] },
-		{ label: "Kensington-Cedar Cottage", x: 18, y: breakAndEnterCommercial[6] },
-		{ label: "Kerrisdale", x: 17, y: breakAndEnterCommercial[7] },
-		{ label: "Killarney", x: 16, y: breakAndEnterCommercial[8] },
-		{ label: "Kitsilano", x: 15, y: breakAndEnterCommercial[9] },
-		{ label: "Marpole", x: 14, y: breakAndEnterCommercial[10] },
-		{ label: "Mount Pleasant", x: 13, y: breakAndEnterCommercial[11] },
-		{ label: "Musqueam", x: 12, y: breakAndEnterCommercial[12] },
-		{ label: "Oakridge", x: 11, y: breakAndEnterCommercial[13] },
-		{ label: "Renfrew-Collingwood", x: 10, y: breakAndEnterCommercial[14] },
-		{ label: "Riley Park", x: 9, y: breakAndEnterCommercial[15] },
-		{ label: "Shaughnessy", x: 8, y: breakAndEnterCommercial[16] },
-		{ label: "South Cambie", x: 7, y: breakAndEnterCommercial[17] },
-		{ label: "Stanley Park", x: 6, y: breakAndEnterCommercial[18] },
-		{ label: "Strathcona", x: 5, y: breakAndEnterCommercial[19]},
-		{ label: "Sunset", x: 4, y: breakAndEnterCommercial[20] },
-		{ label: "Victoria-Fraserview", x: 3, y: breakAndEnterCommercial[21] },
-		{ label: "West End", x: 2, y: breakAndEnterCommercial[22] },
-		{ label: "West Point Grey", x: 1, y: breakAndEnterCommercial[23] }
-	]},
-	{ // TYPE OF CRIME:: "Break and Enter Residential/Other"
-		type: "stackedBar",
-		name: "Break and Enter Residential/Other",
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { label: "Arbutus Ridge", x: 24, y: breakAndEnterResidentialOther[0]},
-  		{ label: "Central Business District", x: 23, y: breakAndEnterResidentialOther[1]},
-  		{ label: "Dunbar-Southlands", x: 22, y: breakAndEnterResidentialOther[2]},
-  		{ label: "Fairview", x: 21, y: breakAndEnterResidentialOther[3] },
-  		{ label: "Grandview-Woodland", x: 20, y: breakAndEnterResidentialOther[4] },
-  		{ label: "Hastings-Sunrise", x: 19, y: breakAndEnterResidentialOther[5] },
-  		{ label: "Kensington-Cedar Cottage", x: 18, y: breakAndEnterResidentialOther[6] },
-  		{ label: "Kerrisdale", x: 17, y: breakAndEnterResidentialOther[7] },
-  		{ label: "Killarney", x: 16, y: breakAndEnterResidentialOther[8] },
-  		{ label: "Kitsilano", x: 15, y: breakAndEnterResidentialOther[9] },
-  		{ label: "Marpole", x: 14, y: breakAndEnterResidentialOther[10] },
-  		{ label: "Mount Pleasant", x: 13, y: breakAndEnterResidentialOther[11] },
-  		{ label: "Musqueam", x: 12, y: breakAndEnterResidentialOther[12] },
-  		{ label: "Oakridge", x: 11, y: breakAndEnterResidentialOther[13] },
-  		{ label: "Renfrew-Collingwood", x: 10, y: breakAndEnterResidentialOther[14] },
-  		{ label: "Riley Park", x: 9, y: breakAndEnterResidentialOther[15] },
-  		{ label: "Shaughnessy", x: 8, y: breakAndEnterResidentialOther[16] },
-  		{ label: "South Cambie", x: 7, y: breakAndEnterResidentialOther[17] },
-  		{ label: "Stanley Park", x: 6, y: breakAndEnterResidentialOther[18] },
-  		{ label: "Strathcona", x: 5, y: breakAndEnterResidentialOther[19]},
-  		{ label: "Sunset", x: 4, y: breakAndEnterResidentialOther[20] },
-  		{ label: "Victoria-Fraserview", x: 3, y: breakAndEnterResidentialOther[21] },
-  		{ label: "West End", x: 2, y: breakAndEnterResidentialOther[22] },
-  		{ label: "West Point Grey", x: 1, y: breakAndEnterResidentialOther[23] }
-		]
-	},
-	{ // TYPE OF CRIME:: "Mischief"
-		type: "stackedBar",
-		name: "Mischief",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 996 },     // Arbutus Ridge
-			{ x: 23, y: 18827 },     // Central Business District
-			{ x: 22, y: 1423 },     // Dunbar-Southlands
-      { x: 21, y: 3501 },    // Fairview
-      { x: 20, y: 5353 },    // Grandview-Woodland
-			{ x: 19, y: 3150 },    // Hastings-Sunrise
-			{ x: 18, y: 4087 },    // Kensington-Cedar Cottage
-      { x: 17, y: 1130 },    // Kerrisdale
-      { x: 16, y: 1893 },    // Killarney
-			{ x: 15, y: 4046 },    // Kitsilano
-			{ x: 14, y: 2080 },    // Marpole
-      { x: 13, y: 4518 },    // Mount Pleasant
-      { x: 12, y: 108 },     // Musqueam
-			{ x: 11, y: 955 },    // Oakridge
-			{ x: 10, y: 4231 },    // Renfrew-Collingwood
-      { x: 9, y: 1954 },     // Riley Park
-      { x: 8, y: 691 },     // Shaughnessy
-			{ x: 7, y: 654 },    // South Cambie
-      { x: 6, y: 255 },     // Stanley Park
-      { x: 5, y: 5165 },       // Strathcona
-      { x: 4, y: 3443 },      // Sunset
-			{ x: 3, y: 1896 },      // Victoria-Fraserview
-			{ x: 2, y: 5877 },      // West End
-      { x: 1, y: 968 }       // West Point Grey
-		]
-	},
-  { // TYPE OF CRIME:: "Other Theft"
-		type: "stackedBar",
-		name: "Other Theft",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 357 },     // Arbutus Ridge
-			{ x: 23, y: 21914 },     // Central Business District
-			{ x: 22, y: 282 },     // Dunbar-Southlands
-      { x: 21, y: 3675 },    // Fairview
-      { x: 20, y: 2816 },    // Grandview-Woodland
-			{ x: 19, y: 1511 },    // Hastings-Sunrise
-			{ x: 18, y: 3155 },    // Kensington-Cedar Cottage
-      { x: 17, y: 274 },    // Kerrisdale
-      { x: 16, y: 277 },    // Killarney
-			{ x: 15, y: 1907 },    // Kitsilano
-			{ x: 14, y: 731 },    // Marpole
-      { x: 13, y: 4287 },    // Mount Pleasant
-      { x: 12, y: 1 },     // Musqueam
-			{ x: 11, y: 1258 },    // Oakridge
-			{ x: 10, y: 4699 },    // Renfrew-Collingwood
-      { x: 9, y: 468 },     // Riley Park
-      { x: 8, y: 26 },     // Shaughnessy
-			{ x: 7, y: 799 },    // South Cambie
-      { x: 6, y: 13 },     // Stanley Park
-      { x: 5, y: 1108 },       // Strathcona
-      { x: 4, y: 1511 },      // Sunset
-			{ x: 3, y: 582 },      // Victoria-Fraserview
-			{ x: 2, y: 6685 },      // West End
-      { x: 1, y: 281 }       // West Point Grey
-		]
-	},
-  { // TYPE OF CRIME:: "Theft from Vehicle"
-    type: "stackedBar",
-    name: "Theft from Vehicle",
-    markerSize: 5,
-    showInLegend: "true",
-    xValueFormatString: " ",
-    yValueFormatString: "",
-    dataPoints: [
-      { x: 24, y: 1988 },     // Arbutus Ridge
-      { x: 23, y: 54006 },     // Central Business District
-      { x: 22, y: 3149 },     // Dunbar-Southlands
-      { x: 21, y: 12779 },    // Fairview
-      { x: 20, y: 8215 },    // Grandview-Woodland
-      { x: 19, y: 6368 },    // Hastings-Sunrise
-      { x: 18, y: 8134 },    // Kensington-Cedar Cottage
-      { x: 17, y: 3015 },    // Kerrisdale
-      { x: 16, y: 4302 },    // Killarney
-      { x: 15, y: 9816 },    // Kitsilano
-      { x: 14, y: 4536 },    // Marpole
-      { x: 13, y: 10721 },    // Mount Pleasant
-      { x: 12, y: 225 },     // Musqueam
-      { x: 11, y: 2471 },    // Oakridge
-      { x: 10, y: 9222 },    // Renfrew-Collingwood
-      { x: 9, y: 4728 },     // Riley Park
-      { x: 8, y: 1988 },     // Shaughnessy
-      { x: 7, y: 1673 },    // South Cambie
-      { x: 6, y: 2979 },     // Stanley Park
-      { x: 5, y: 8323 },       // Strathcona
-      { x: 4, y: 5702 },      // Sunset
-      { x: 3, y: 3688 },      // Victoria-Fraserview
-      { x: 2, y: 18479 },      // West End
-      { x: 1, y: 2146 }       // West Point Grey
-    ]
-  },
-  { // TYPE OF CRIME:: "Theft of Bicycle"
-    type: "stackedBar",
-    name: "Theft of Bicycle",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 181 },     // Arbutus Ridge
-			{ x: 23, y: 7833 },     // Central Business District
-			{ x: 22, y: 260 },     // Dunbar-Southlands
-      { x: 21, y: 3727 },    // Fairview
-      { x: 20, y: 1542 },    // Grandview-Woodland
-			{ x: 19, y: 393 },    // Hastings-Sunrise
-			{ x: 18, y: 961 },    // Kensington-Cedar Cottage
-      { x: 17, y: 192 },    // Kerrisdale
-      { x: 16, y: 186 },    // Killarney
-			{ x: 15, y: 2701 },    // Kitsilano
-			{ x: 14, y: 266 },    // Marpole
-      { x: 13, y: 3064 },    // Mount Pleasant
-      { x: 12, y: 9 },     // Musqueam
-			{ x: 11, y: 209 },    // Oakridge
-			{ x: 10, y: 474 },    // Renfrew-Collingwood
-      { x: 9, y: 687 },     // Riley Park
-      { x: 8, y: 153 },     // Shaughnessy
-			{ x: 7, y: 256 },    // South Cambie
-      { x: 6, y: 238 },     // Stanley Park
-      { x: 5, y: 1155 },       // Strathcona
-      { x: 4, y: 279 },      // Sunset
-			{ x: 3, y: 149 },      // Victoria-Fraserview
-			{ x: 2, y: 3255 },      // West End
-      { x: 1, y: 406 }       // West Point Grey
-		]
-	},
-  { // TYPE OF CRIME:: "Theft of Vehicle"
-    type: "stackedBar",
-    name: "Theft of Vehicle",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 511 },     // Arbutus Ridge
-			{ x: 23, y: 4229 },     // Central Business District
-			{ x: 22, y: 645 },     // Dunbar-Southlands
-      { x: 21, y: 2111 },    // Fairview
-      { x: 20, y: 3291 },    // Grandview-Woodland
-			{ x: 19, y: 2577 },    // Hastings-Sunrise
-			{ x: 18, y: 3029 },    // Kensington-Cedar Cottage
-      { x: 17, y: 569 },    // Kerrisdale
-      { x: 16, y: 1353 },    // Killarney
-			{ x: 15, y: 2438 },    // Kitsilano
-			{ x: 14, y: 1664 },    // Marpole
-      { x: 13, y: 2766 },    // Mount Pleasant
-      { x: 12, y: 43 },     // Musqueam
-			{ x: 11, y: 695 },    // Oakridge
-			{ x: 10, y: 3142 },    // Renfrew-Collingwood
-      { x: 9, y: 1254 },     // Riley Park
-      { x: 8, y: 385 },     // Shaughnessy
-			{ x: 7, y: 449 },    // South Cambie
-      { x: 6, y: 77 },     // Stanley Park
-      { x: 5, y: 1784 },       // Strathcona
-      { x: 4, y: 2344 },      // Sunset
-			{ x: 3, y: 1424 },      // Victoria-Fraserview
-			{ x: 2, y: 2775 },      // West End
-      { x: 1, y: 467 }       // West Point Grey
-		]
-	},
-  { // TYPE OF CRIME:: "Vehicle Collision or Pedestrian Struck (with Fatality)"
-    type: "stackedBar",
-    name: "Vehicle Collision or Pedestrian Struck (with Fatality)",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 4 },     // Arbutus Ridge
-			{ x: 23, y: 44 },     // Central Business District
-			{ x: 22, y: 4 },     // Dunbar-Southlands
-      { x: 21, y: 14 },    // Fairview
-      { x: 20, y: 9 },    // Grandview-Woodland
-			{ x: 19, y: 18 },    // Hastings-Sunrise
-			{ x: 18, y: 14 },    // Kensington-Cedar Cottage
-      { x: 17, y: 7 },    // Kerrisdale
-      { x: 16, y: 12 },    // Killarney
-			{ x: 15, y: 14 },    // Kitsilano
-			{ x: 14, y: 10 },    // Marpole
-      { x: 13, y: 19 },    // Mount Pleasant
-      { x: 12, y: 1 },     // Musqueam
-			{ x: 11, y: 6 },    // Oakridge
-			{ x: 10, y: 13 },    // Renfrew-Collingwood
-      { x: 9, y: 5 },     // Riley Park
-      { x: 8, y: 7 },     // Shaughnessy
-			{ x: 7, y: 2 },    // South Cambie
-      { x: 6, y: 6 },     // Stanley Park
-      { x: 5, y: 22 },       // Strathcona
-      { x: 4, y: 18 },      // Sunset
-			{ x: 3, y: 10 },      // Victoria-Fraserview
-			{ x: 2, y: 8 },      // West End
-      { x: 1, y: 5 }       // West Point Grey
-		]
-	},
-  { // TYPE OF CRIME:: "Vehicle Collision or Pedestrian Struck (with Injury)"
-    type: "stackedBar",
-    name: "Vehicle Collision or Pedestrian Struck (with Injury)",
-    markerSize: 5,
-		showInLegend: "true",
-		xValueFormatString: " ",
-		yValueFormatString: "",
-		dataPoints: [
-      { x: 24, y: 314 },     // Arbutus Ridge
-			{ x: 23, y: 3468 },     // Central Business District
-			{ x: 22, y: 298 },     // Dunbar-Southlands
-      { x: 21, y: 1256 },    // Fairview
-      { x: 20, y: 1322 },    // Grandview-Woodland
-			{ x: 19, y: 1364 },    // Hastings-Sunrise
-			{ x: 18, y: 1673 },    // Kensington-Cedar Cottage
-      { x: 17, y: 485 },    // Kerrisdale
-      { x: 16, y: 622 },    // Killarney
-			{ x: 15, y: 1128 },    // Kitsilano
-			{ x: 14, y: 1035 },    // Marpole
-      { x: 13, y: 1749 },    // Mount Pleasant
-      { x: 12, y: 64 },     // Musqueam
-			{ x: 11, y: 452 },    // Oakridge
-			{ x: 10, y: 1542 },    // Renfrew-Collingwood
-      { x: 9, y: 737 },     // Riley Park
-      { x: 8, y: 627 },     // Shaughnessy
-			{ x: 7, y: 250 },    // South Cambie
-      { x: 6, y: 229 },     // Stanley Park
-      { x: 5, y: 1251 },       // Strathcona
-      { x: 4, y: 1419 },      // Sunset
-			{ x: 3, y: 863 },      // Victoria-Fraserview
-			{ x: 2, y: 1285 },      // West End
-      { x: 1, y: 326 }       // West Point Grey
-		]
-	}
-]
-});
-chart.render();
+  prepareDataPoints();
+  var chart = new CanvasJS.Chart("chartContainer",
+  {
+  	animationEnabled: true,
+  	axisX: {
+  		labelFontSize: 15,
+  		labelWrap: true,
+  		prefix: " ",
+  		interval: 1
+  	},
+  	axisY: {
+  		prefix: " ",
+  		labelFontSize: 15,
+  		titel: "count"
+  	},
+  	toolTip: {
+  		shared: true
+  	},
+  	legend:{
+  		cursor: "pointer",
+  		itemclick: toggleDataSeries,
+      fontSize: 14
+  	},
+    data:  dataPoints
+  });
+  chart.render();
 
-function toggleDataSeries(e) {
-	if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else {
-		e.dataSeries.visible = true;
-	}
-	chart.render();
+  function toggleDataSeries(e) {
+  	if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+  		e.dataSeries.visible = false;
+  	}
+  	else {
+  		e.dataSeries.visible = true;
+  	}
+  chart.render();
 }
 
 }
