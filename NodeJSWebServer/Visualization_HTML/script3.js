@@ -777,9 +777,9 @@ function loadRecentChartData(){
 }
 
 function prepareDataPoints(){
-  var tmp;
+  var tmp = "";
   var allHoodsSet = true;
-
+  recentChartData = "";
   if(breakAndEnterCommercial.includes(0) && breakAndEnterResidentialOther.includes(0) &&
     michief.includes(0) && otherTheft .includes(0) && theftFromVehicle.includes(0) &&
     theftOfBicycle.includes(0) && theftOfVehicle.includes(0) &&
@@ -1051,7 +1051,2017 @@ function prepareDataPoints(){
 
     recentChartData += '}]';
   }else{
-    //error :p
+    var counter = checkedHoodBoxes.length;
+    if(counter > 0){
+      //preparations for BreakAndEnterCommercial
+      tmp = '[{ "type": "stackedBar", "name": "Break and Enter Commercial", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + breakAndEnterCommercial[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+
+
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Break and Enter Residential / Other", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + breakAndEnterResidentialOther[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Michief", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + michief[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + michief[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + michief[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + michief[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + michief[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + michief[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + michief[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + michief[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + michief[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + michief[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + michief[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + michief[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + michief[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + michief[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + michief[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + michief[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + michief[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + michief[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + michief[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + michief[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + michief[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + michief[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + michief[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + michief[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+
+
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Other Theft", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + otherTheft[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + otherTheft[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + otherTheft[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + otherTheft[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + otherTheft[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + otherTheft[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + otherTheft[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + otherTheft[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + otherTheft[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + otherTheft[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + otherTheft[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + otherTheft[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + otherTheft[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + otherTheft[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + otherTheft[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + otherTheft[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + otherTheft[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + otherTheft[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + otherTheft[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + otherTheft[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + otherTheft[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + otherTheft[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + otherTheft[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + otherTheft[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Theft From Vehicle", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + theftFromVehicle[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + theftFromVehicle[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + theftFromVehicle[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + theftFromVehicle[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + theftFromVehicle[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + theftFromVehicle[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + theftFromVehicle[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + theftFromVehicle[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + theftFromVehicle[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + theftFromVehicle[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + theftFromVehicle[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + theftFromVehicle[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + theftFromVehicle[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + theftFromVehicle[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + theftFromVehicle[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + theftFromVehicle[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + theftFromVehicle[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + theftFromVehicle[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + theftFromVehicle[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + theftFromVehicle[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + theftFromVehicle[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + theftFromVehicle[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + theftFromVehicle[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + theftFromVehicle[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Theft Of Bicycle", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + theftOfBicycle[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + theftOfBicycle[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + theftOfBicycle[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + theftOfBicycle[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + theftOfBicycle[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + theftOfBicycle[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + theftOfBicycle[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + theftOfBicycle[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + theftOfBicycle[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + theftOfBicycle[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + theftOfBicycle[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + theftOfBicycle[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + theftOfBicycle[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + theftOfBicycle[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + theftOfBicycle[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + theftOfBicycle[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + theftOfBicycle[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + theftOfBicycle[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + theftOfBicycle[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + theftOfBicycle[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + theftOfBicycle[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + theftOfBicycle[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + theftOfBicycle[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + theftOfBicycle[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Theft Of Vehicle", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + theftOfVehicle[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + theftOfVehicle[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + theftOfVehicle[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + theftOfVehicle[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + theftOfVehicle[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + theftOfVehicle[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + theftOfVehicle[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + theftOfVehicle[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + theftOfVehicle[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + theftOfVehicle[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + theftOfVehicle[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + theftOfVehicle[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + theftOfVehicle[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + theftOfVehicle[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + theftOfVehicle[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + theftOfVehicle[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + theftOfVehicle[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + theftOfVehicle[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + theftOfVehicle[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + theftOfVehicle[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + theftOfVehicle[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + theftOfVehicle[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + theftOfVehicle[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + theftOfVehicle[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Vehicle Collision Or Pedestrian Struck With Fatality", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithFatality[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      tmp += '},';
+      recentChartData += tmp;
+
+      counter = checkedHoodBoxes.length;
+      tmp = '{ "type": "stackedBar", "name": "Vehicle Collision Or Pedestrian Struck With Injury", "markerSize": 5, "showInLegend": "true", "xValueFormatString": "",  "yValueFormatString": "", "dataPoints":';
+      tmp += '[';
+      if(checkedHoodBoxes.includes("Arbutus Ridge")){
+        tmp += '{ "label": "Arbutus Ridge", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[0] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Central Business District")){
+        tmp += '{ "label": "Central Business District", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[1] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Dunbar-Southlands")){
+        tmp += '{ "label": "Dunbar-Southlands", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[2] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Fairview")){
+        tmp += '{ "label": "Fairview", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[3] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Grandview-Woodland")){
+        tmp += '{ "label": "Grandview-Woodland", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[4] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Hastings-Sunrise")){
+        tmp += '{ "label": "Hastings-Sunrise", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[5] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kensington-Cedar Cottage")){
+        tmp += '{ "label": "Kensington-Cedar Cottage", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[6] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kerrisdale")){
+        tmp += '{ "label": "Kerrisdale", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[7] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Killarney")){
+        tmp += '{ "label": "Killarney", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[8] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Kitsilano")){
+        tmp += '{ "label": "Kitsilano", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[9] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Marpole")){
+        tmp += '{ "label": "Marpole", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[10] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Mount Pleasant")){
+        tmp += '{ "label": "Mount Pleasant", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[11] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Musqueam")){
+        tmp += '{ "label": "Musqueam", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[12] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Oakridge")){
+        tmp += '{ "label": "Oakridge", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[13] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Renfrew-Collingwood")){
+        tmp += '{ "label": "Renfrew-Collingwood", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[14] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Riley Park")){
+        tmp += '{ "label": "Riley Park", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[15] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Shaughnessy")){
+        tmp += '{ "label": "Shaughnessy", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[16] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("South Cambie")){
+        tmp += '{ "label": "South Cambie", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[17] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Stanley Park")){
+        tmp += '{ "label": "Stanley Park", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[18] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Strathcona")){
+        tmp += '{ "label": "Strathcona", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[19] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Sunset")){
+        tmp += '{ "label": "Sunset", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[20] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("Victoria-Fraserview")){
+        tmp += '{ "label": "Victoria-Fraserview", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[21] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West End")){
+        tmp += '{ "label": "West End", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[22] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      if(checkedHoodBoxes.includes("West Point Grey")){
+        tmp += '{ "label": "West Point Grey", "x": ' + counter + ', "y": ' + vehicleCollisionOrPedestrianStruckWithInjury[23] + '}';
+        counter--;
+        if(counter > 0){
+          tmp += ',';
+        }else{
+          tmp += ']';
+        }
+      }
+      recentChartData += tmp;
+
+      recentChartData += '}]';
+    }
   }
   dataPoints = JSON.parse(recentChartData);
   recentChartData = "";
