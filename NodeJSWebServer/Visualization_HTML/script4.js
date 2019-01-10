@@ -179,6 +179,76 @@ function loadDataAgain(selectedNeighborhood,selectedCrime)
             else if(lines[i].includes("2018"))
             {counter2018++;}
           }
+          else if(selectedNeighborhood == "All Neighborhoods" && selectedCrime!="All Crimes" && lines[i].includes(selectedCrime))
+          {
+            if(lines[i].includes("2003"))
+            {counter2003++;}
+            else if(lines[i].includes("2004"))
+            {counter2004++;}
+            else if(lines[i].includes("2005"))
+            {counter2005++;}
+            else if(lines[i].includes("2006"))
+            {counter2006++;}
+            else if(lines[i].includes("2007"))
+            {counter2007++;}
+            else if(lines[i].includes("2008"))
+            {counter2008++;}
+            else if(lines[i].includes("2009"))
+            {counter2009++;}
+            else if(lines[i].includes("2010"))
+            {counter2010++;}
+            else if(lines[i].includes("2011"))
+            {counter2011++;}
+            else if(lines[i].includes("2012"))
+            {counter2012++;}
+            else if(lines[i].includes("2013"))
+            {counter2013++;}
+            else if(lines[i].includes("2014"))
+            {counter2014++;}
+            else if(lines[i].includes("2015"))
+            {counter2015++;}
+            else if(lines[i].includes("2016"))
+            {counter2016++;}
+            else if(lines[i].includes("2017"))
+            {counter2017++;}
+            else if(lines[i].includes("2018"))
+            {counter2018++;}
+          }
+          else if(selectedNeighborhood != "All Neighborhoods" && selectedCrime=="All Crimes" && lines[i].includes(selectedNeighborhood))
+          {
+            if(lines[i].includes("2003"))
+            {counter2003++;}
+            else if(lines[i].includes("2004"))
+            {counter2004++;}
+            else if(lines[i].includes("2005"))
+            {counter2005++;}
+            else if(lines[i].includes("2006"))
+            {counter2006++;}
+            else if(lines[i].includes("2007"))
+            {counter2007++;}
+            else if(lines[i].includes("2008"))
+            {counter2008++;}
+            else if(lines[i].includes("2009"))
+            {counter2009++;}
+            else if(lines[i].includes("2010"))
+            {counter2010++;}
+            else if(lines[i].includes("2011"))
+            {counter2011++;}
+            else if(lines[i].includes("2012"))
+            {counter2012++;}
+            else if(lines[i].includes("2013"))
+            {counter2013++;}
+            else if(lines[i].includes("2014"))
+            {counter2014++;}
+            else if(lines[i].includes("2015"))
+            {counter2015++;}
+            else if(lines[i].includes("2016"))
+            {counter2016++;}
+            else if(lines[i].includes("2017"))
+            {counter2017++;}
+            else if(lines[i].includes("2018"))
+            {counter2018++;}
+          }
           else if(lines[i].includes(selectedNeighborhood) && lines[i].includes(selectedCrime))
           {
             if(lines[i].includes("2003"))
@@ -239,7 +309,7 @@ function loadDataAgain(selectedNeighborhood,selectedCrime)
   		  allDataObjects = JSON.parse(completeData);
   		  currentData = allDataObjects;
         maximum = Math. max(counter2003, counter2004, counter2005, counter2006,counter2007,counter2008,counter2009,counter2010,counter2011,counter2012,counter2013,counter2014,counter2015,counter2016,counter2017,counter2018);
-        maximum +=50;
+        maximum +=(maximum/10);
         chartThree(currentData,maximum);
         //console.log(currentData);
           }
@@ -276,7 +346,7 @@ function chartThree(currentData,maximum)
   document.getElementById('chartContainer').innerHTML = "<div id='map2' style='width: 100%; height: 100%; left: 0%; top: 0%;'></div>";
 
   var chart = new CanvasJS.Chart("map2", {
-	animationEnabled: true,
+	animationEnabled: false,
 	zoomEnabled: true,
   title:{
     fontSize: 20,
