@@ -390,10 +390,10 @@ function radioFunction()
     loadDataAgain("/HeatMapConvertedData/2006Theft_of_Vehicle.txt");
   }
   else if (document.getElementById("radio2006").checked == true && document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked == true)  {
-    loadDataAgain("/HeatMapConvertedData/2005Vehicle_Collision_or_Pedestrian_Struck_(with_Fatality).txt");
+    loadDataAgain("/HeatMapConvertedData/2006Vehicle_Collision_or_Pedestrian_Struck_(with_Fatality).txt");
   }
   else if (document.getElementById("radio2006").checked == true && document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked == true)  {
-    loadDataAgain("/HeatMapConvertedData/2005Vehicle_Collision_or_Pedestrian_Struck_(with_Injury).txt");
+    loadDataAgain("/HeatMapConvertedData/2006Vehicle_Collision_or_Pedestrian_Struck_(with_Injury).txt");
   }
   ////////////////////////////////////////////////////////////////////////////////
   else if (document.getElementById("radio2007").checked == true && document.getElementById("BreakAndEnterCommercial").checked == true)  {
