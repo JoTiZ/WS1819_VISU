@@ -1,8 +1,8 @@
 [{
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Other Theft",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 2582, "label": "2003"},
 {"y": 2470, "label": "2004"},
 {"y": 1847, "label": "2005"},
@@ -20,12 +20,12 @@
 {"y": 860, "label": "2017"},
 {"y": 860, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Vehicle Collision or Pedestrian Struck (with Fatality)",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 24, "label": "2003"},
 {"y": 24, "label": "2004"},
 {"y": 24, "label": "2005"},
@@ -43,12 +43,12 @@
 {"y": 24, "label": "2017"},
 {"y": 24, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Theft from Vehicle",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 17744, "label": "2003"},
 {"y": 17412, "label": "2004"},
 {"y": 15315, "label": "2005"},
@@ -66,12 +66,12 @@
 {"y": 12115, "label": "2017"},
 {"y": 12112, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Offence Against a Person",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 3513, "label": "2003"},
 {"y": 3513, "label": "2004"},
 {"y": 3513, "label": "2005"},
@@ -89,12 +89,12 @@
 {"y": 3513, "label": "2017"},
 {"y": 3513, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Theft of Vehicle",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 6361, "label": "2003"},
 {"y": 6310, "label": "2004"},
 {"y": 5907, "label": "2005"},
@@ -112,12 +112,12 @@
 {"y": 5245, "label": "2017"},
 {"y": 5241, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Mischief",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 6391, "label": "2003"},
 {"y": 6335, "label": "2004"},
 {"y": 5882, "label": "2005"},
@@ -135,12 +135,12 @@
 {"y": 5026, "label": "2017"},
 {"y": 5026, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Break and Enter Commercial",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 3197, "label": "2003"},
 {"y": 3197, "label": "2004"},
 {"y": 3197, "label": "2005"},
@@ -158,12 +158,12 @@
 {"y": 3197, "label": "2017"},
 {"y": 3197, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Vehicle Collision or Pedestrian Struck (with Injury)",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 1803, "label": "2003"},
 {"y": 1803, "label": "2004"},
 {"y": 1803, "label": "2005"},
@@ -181,12 +181,12 @@
 {"y": 1803, "label": "2017"},
 {"y": 1803, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Break and Enter Residential/Other",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 6883, "label": "2003"},
 {"y": 6768, "label": "2004"},
 {"y": 5816, "label": "2005"},
@@ -204,12 +204,12 @@
 {"y": 4280, "label": "2017"},
 {"y": 4279, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Homicide",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 18, "label": "2003"},
 {"y": 18, "label": "2004"},
 {"y": 18, "label": "2005"},
@@ -227,12 +227,12 @@
 {"y": 18, "label": "2017"},
 {"y": 18, "label": "2018"}]
 },
- 
+
 {
- "type": "stackedArea", 
- "showInLegend": "true", 
+ "type": "stackedArea",
+ "showInLegend": "true",
  "name": "Theft of Bicycle",
- "dataPoints":[ 
+ "dataPoints":[
 {"y": 1418, "label": "2003"},
 {"y": 1418, "label": "2004"},
 {"y": 1343, "label": "2005"},
