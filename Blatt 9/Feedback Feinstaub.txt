@@ -1,26 +1,26 @@
 Positiv:
 - Responsive Design, funktioniert auch auf dem Handy.
 
-- Keine Installation noetig, alle Daten voranden.
+- Keine Installation nötig, alle Daten vorhanden.
 
 - Bekannte Aufteilung gewählt / Design schlicht und übersichtlich.
 
 - Die Kalenderauswahl zeigt den möglichen Zeitraum der Daten an.
 
-- Leicht zu bedienen und zu verstehen.
+- Leicht, intuitiv zu bedienen und zu verstehen.
 
 - Beschreibung auch sehr hilfreich (Allerdings ist im Text noch ein Platzhalter drin -> "Als Start Zeitraum ist der xx bis xx ausgewählt.")
 
 
 
 Kritik:
-- Wenn man auf die Filter klickt werden diese Blau markiert und man bekommt den Eindruck das diese aktiviert werden jedoch werden sie deaktiviert. Daher vlt farben umkehren.
+- Wenn man auf die Filter klickt werden diese Blau markiert und man bekommt den Eindruck das diese aktiviert werden jedoch werden sie deaktiviert. Daher vlt fFarben umkehren.
 
 - Wenn man beide Filter deaktiviert bleib trotzdem noch PM10 stehen.aktiviert man beide wieder tut sich nichts mehr es bleibt immer PM10 egal ob aktiv oder nicht. Erst wenn man die Seite neu lädt kommen die Filter wieder.
 
 - Filter der Stadtteile fängt mit Eningen an, besser mit "Alle" anfangen. Für den Zeitraum könnte beispielsweise auch der aktuellste Monat vorausgewählt sein.
 
-- Im Dropdown Menue (links) liegt ein leeres Feld - gibt auch keine Daten aus (falls keine Daten vorhanden, vielleicht in der Karte nicht mit mouseOver Effekt belegen - suggeriert Auswahlmöglichkeit)
+- Im Dropdown Menü (links) liegt ein leeres Feld - gibt auch keine Daten aus (falls keine Daten vorhanden, vielleicht in der Karte nicht mit mouseOver Effekt belegen - suggeriert Auswahlmöglichkeit)
 
 - Die Map markiert ein Gebiet sobald man mit der Maus drauf geht jedoch tut sich nichts wenn man mit der Maus drauf klickt. Man bekommt den Eindruck das man auch von dort die Gebiete auswählen kann ist aber nicht so. Wäre cool, wenn das mit dem Filter für die Stadtteile verbunden wäre.
 
@@ -28,4 +28,13 @@ Kritik:
 
 - Manchmal wenn man den Zeitraum ändert oder das Gebiet ändert und auf Filter anwenden klickt passiert nichts. Manchmal werden die Daten erst nach einer bestimmten Wartezeit aktualisiert. Es wäre da vlt am besten zu zeigen das die Daten noch geladen werden. Könnte man z.B. machen indem der "Filter anwenden"-Button grau wird o.ä.
 
-- Wird beim Filter 2016 eingetragen und auf "Filter Anwenden" geklickt passiert sehr langen nichts (kein Feedback an den Nutzer, z. B. durch Progress bar). Nach laengerem laden erscheint ploetzlich ein halb leesres Chart, da der "leere Zeitraum" ebenfalls visualiert wird. Es sollte die haendische Eingabe nicht moeglich sein, oder sie muss ueberprueft werden - vor der Visualisierung.
+- Wird beim Filter 2016 eingetragen und auf "Filter Anwenden" geklickt passiert sehr langen nichts (kein Feedback an den Nutzer, z. B. durch Progress bar). Nach längerem laden erscheint plötzlich ein halb leeres Chart, da der "leere Zeitraum" ebenfalls visualisiert wird. Es sollte die händische Eingabe nicht möglich sein, oder sie muss überprüft werden - vor der Visualisierung.
+
+- Nur eine Visualisierungsform, nicht mehrere Diagrammarten.
+
+
+
+
+Ideen für Erweiterung:
+- Mithilfe einer Heatmap die Stadtteile anzeigen, die in dem ausgewählten Zeitraum den meisten Feinstaub hatten.
+
