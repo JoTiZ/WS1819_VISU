@@ -581,6 +581,12 @@ window.onload = function () {
 
 }
 
+function uncheckAll(){
+  document.getElementById("AllCrimes").checked=true;
+  document.getElementById("All Neighborhoods").checked=true;
+  radioNeighborhoodFunction();
+}
+
 function loadDataAgain(selectedNeighborhood,selectedCrime)
 {
   var url = "/scatterPlotAllData.txt";
