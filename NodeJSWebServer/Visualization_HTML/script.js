@@ -52,7 +52,7 @@ function uncheckAll()
 
 function uncheckAll2()
 {
-  document.getElementById("radioAll").checked = false;
+  document.getElementById("radioAll").checked = true;
   document.getElementById("radio2003").checked = false;
   document.getElementById("radio2004").checked = false;
   document.getElementById("radio2005").checked = false;
@@ -78,6 +78,8 @@ function uncheckAll2()
   document.getElementById("TheftOfVehicle").checked = false;
   document.getElementById("VehicleCollisionOrPedestrianStruckWithFatality").checked = false;
   document.getElementById("VehicleCollisionOrPedestrianStruckWithInjury").checked = false;
+  heatMapAll(allData);
+  uncheckAll();
 }
 
 function radioFunction()
