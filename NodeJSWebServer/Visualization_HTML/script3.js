@@ -3449,3 +3449,51 @@ function redrawChart(){
 }
 
 }
+
+function btCheckAllYears(){
+  document.getElementById("cb2003").checked = true;
+  document.getElementById("cb2004").checked = true;
+  document.getElementById("cb2005").checked = true;
+  document.getElementById("cb2006").checked = true;
+  document.getElementById("cb2007").checked = true;
+  document.getElementById("cb2008").checked = true;
+  document.getElementById("cb2009").checked = true;
+  document.getElementById("cb2010").checked = true;
+  document.getElementById("cb2011").checked = true;
+  document.getElementById("cb2012").checked = true;
+  document.getElementById("cb2013").checked = true;
+  document.getElementById("cb2014").checked = true;
+  document.getElementById("cb2015").checked = true;
+  document.getElementById("cb2016").checked = true;
+  document.getElementById("cb2017").checked = true;
+  document.getElementById("cb2018").checked = true;
+  checkFunction();
+}
+
+function btCheckAllHoods(){
+  document.getElementById("Arbutus Ridge").checked = true;
+  document.getElementById("Central Business District").checked = true;
+  document.getElementById("Dunbar-Southlands").checked = true;
+  document.getElementById("Fairview").checked = true;
+  document.getElementById("Grandview-Woodland").checked = true;
+  document.getElementById("Hastings-Sunrise").checked = true;
+  document.getElementById("Kensington-Cedar Cottage").checked = true;
+  document.getElementById("Kerrisdale").checked = true;
+  document.getElementById("Killarney").checked = true;
+  document.getElementById("Kitsilano").checked = true;
+  document.getElementById("Marpole").checked = true;
+  document.getElementById("Mount Pleasant").checked = true;
+  document.getElementById("Musqueam").checked = true;
+  document.getElementById("Oakridge").checked = true;
+  document.getElementById("Renfrew-Collingwood").checked = true;
+  document.getElementById("Riley Park").checked = true;
+  document.getElementById("Shaughnessy").checked = true;
+  document.getElementById("South Cambie").checked = true;
+  document.getElementById("Stanley Park").checked = true;
+  document.getElementById("Strathcona").checked = true;
+  document.getElementById("Sunset").checked = true;
+  document.getElementById("Victoria-Fraserview").checked = true;
+  document.getElementById("West End").checked = true;
+  document.getElementById("West Point Grey").checked = true;
+  checkFunction();
+}
